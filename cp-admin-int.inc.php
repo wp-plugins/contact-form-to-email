@@ -82,6 +82,8 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
   <h3 class='hndle' style="padding:5px;"><span>Form Builder</span></h3>
   <div class="inside">   
 
+     <b>* Note: The Form Builder isn't available in this version. <a href="http://wordpress.dwbooster.com/forms/contact-form-to-email" target="_blank">Check a version with the Form Builder enabled here</a>.</b>
+     <br /><br />
      <input type="hidden" name="form_structure" id="form_structure" size="180" value="<?php echo str_replace("\r","",str_replace("\n","",esc_attr($this->cleanJSON($this->get_option('form_structure', CP_CFEMAIL_DEFAULT_form_structure))))); ?>" />
      
      <link href="<?php echo plugins_url('css/style.css', __FILE__); ?>" type="text/css" rel="stylesheet" />   
