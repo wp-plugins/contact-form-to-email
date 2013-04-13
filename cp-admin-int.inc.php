@@ -177,7 +177,13 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
   </div>    
  </div> 
  
-
+ <div id="metabox_basic_settings" class="postbox" >
+  <h3 class='hndle' style="padding:5px;"><span>Connect form to PayPal</span></h3>
+  <div class="inside">
+    <b>This feature is available in the plugin <a href="http://wordpress.dwbooster.com/forms/cp-contact-form-with-paypal" target="_blank">CP Contact Form with PayPal</a>.</b>
+  </div>    
+ </div>   
+   
 
  <div id="metabox_basic_settings" class="postbox" >
   <h3 class='hndle' style="padding:5px;"><span>Validation Settings</span></h3>
