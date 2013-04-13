@@ -130,12 +130,12 @@ $color_array = array(/**'ff0000',*/'ff4500','ff6347','f08080', 'ff7f50', 'ff8c00
  <div style="padding-right:5px;padding-left:5px;color:#888888;">* Submissions per day in the selected date range.<br />&nbsp;&nbsp; Days from <?php echo $date_start; ?> to <?php echo $date_end; ?>.</div>
 </div> 
 
-<div style="border:1px solid black;width:320px;margin:0px;padding:0px;float:left;"> 
+<div style="border:1px solid black;width:330px;margin:0px;padding:0px;float:left;"> 
  <div style="border-bottom:1px solid black;padding:5px;background:#ECECEC;color:#21759B;font-weight: bold;">
    Submisions per hour
  </div>
  <div class="canvas" id="cardiocontainer2" style="margin-left:10px;">
-  <canvas id="cardio2"  width="300" height="200" questions='[{"color":"#00f","values":[<?php echo $hourly_messages; ?>]}]'></canvas>
+  <canvas id="cardio2"  width="312" height="200" questions='[{"color":"#00f","values":[<?php echo $hourly_messages; ?>]}]'></canvas>
  </div>
  <div style="padding-right:5px;padding-left:5px;color:#888888;">* Total submissions per hour in the selected date range.<br />&nbsp;&nbsp; Hours from 0 to 23.</div>
 </div> 
