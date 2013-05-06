@@ -12,11 +12,22 @@ Contact form that sends the data to email and also to a database list and CSV fi
 
 == Description ==
 
+Contact Form to Email features:
+
+	► Email delivery & notifications
+	► Saves messages into database
+	► Export to Excel / CSV
+	► Printable list of messages
+	► Anti-spam captcha
+	► Field validation
+	► Printable reports
+	► ... and more features (see below)
+
 The main purpose of the **Contact Form to Email** is, as the name indicates, to **create contact forms** and **send their data email addresses**.
 
 In addition to that basic feature it also **saves the form data into a database**, provides **printable reports** and the option to **export selected data to CSV/Excel** files.
 
-= Features: =
+= More about the Main Features: =
 
 * **Email delivery / notifications:** The contact form data is sent by email to one or more email addresses. It also supports the configuration of auto-replies to the user who filled the form.
 * **Form data saved into the database:** Avoid losing submissions and keep a record of the received contact form messages.
