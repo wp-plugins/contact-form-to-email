@@ -94,7 +94,7 @@ $color_array = array(/**'ff0000',*/'ff4500','ff6347','f08080', 'ff7f50', 'ff8c00
 
 <div id="normal-sortables" class="meta-box-sortables">
  <hr />
- <h3>This message list is from: <?php if ($this->item != 0) echo $myform[0]->form_name; else echo 'All forms'; ?></h3>
+ <h3>This report is for: <?php if ($this->item != 0) echo $myform[0]->form_name; else echo 'All forms'; ?></h3>
 </div>
 
 
