@@ -26,14 +26,14 @@ Contact Form to Email features:
 
 The main purpose of the **Contact Form to Email** is, as the name indicates, to **create contact forms** and **send their data email addresses**.
 
-In addition to that basic feature it also **saves the form data into a database**, provides **printable reports** and the option to **export selected data to CSV/Excel** files.
+In addition to that basic feature it also **saves the contact form data into a database**, provides **printable reports** and the option to **export selected data to CSV/Excel** files.
 
 = More about the Main Features: =
 
 * **Email delivery / notifications:** The contact form data is sent by email to one or more email addresses. It also supports the configuration of auto-replies to the user who filled the contact form.
 * **Form data saved into the database:** Avoid losing submissions and keep a record of the received contact form messages.
 * **Printable list of messages:** Get the list of contacts received from the contact form within a selected date range and print it.
-* **Export data to CSV/Excel:** Export the contact form data to a standard format that can be used by other applications. Export the email addresses and other form data using date and text search filters.
+* **Export data to CSV/Excel:** Export the contact form data to a standard format that can be used by other applications. Export the email addresses and other contact form data using date and text search filters.
 * **Automatic reports:** Provide automatic reports of the contact form usage and data entered into the form. Report of daily submissions and accumulative hourly report. Printable reports for specific fields into the contact form. Helps you top understand your data.
 * **Form Validation:** Set validation rules for each contact form field. Keep your data clean.
 * **Anti-spam protection:** Built-it captcha anti-spam protection. No need to rely on external services for the contact form anti-spam protection.
@@ -57,13 +57,13 @@ The list of contact form messages is shown below the search area. A print button
 
 The reports section lets you **analyze the use of the contact forms** and the data entered into them. The first section of the reports is a filter section similar to the one that appears in the messages list page. Below the filters section there are three graphical reports:
 
-* **Submissions per day:** The report will display in a point-lines graphic how many contact form submissions have been received each day in the selected date range. This report can be used to evaluate the contact form peaks and measure the impact of marketing actions.
+* **Submissions per day:** The report will display in point-lines graphic how many contact form submissions have been received each day in the selected date range. This report can be used to evaluate the contact form peaks and measure the impact of marketing actions.
 
 * **Submissions per hour:** The report will display in a point-lines graphic how many contact form messages are received on each hour of the date; this is for the total messages in the selected date range. This report can be used for checking peak hours and focus the support service on those hours.
 
-* **Report of values for a selected field:** Select any of the contact form fields and other information fields (like date, ip, hours) to get a report of how many times each value have been entered or selected. This is very useful if you form is used as a poll to get feedback from users, it makes easy to generate a report on selectable contact form fields. This report can be used also to study the most common data entered in the form and get a better idea of your customer's profile and needs.
+* **Report of values for a selected field:** Select any of the contact form fields and other information fields (like date, ip, hours) to get a report of how many times each value have been entered or selected. This is very useful if you form is used as a poll to get feedback from users, it makes easy to generate a report on selectable contact form fields. This report can be used also to study the most common data entered in the contact form and get a better idea of your customer's profile and needs.
 
-A print button at the end of the page can be used to print the report of the values for the selected field in a printer-friendly format.
+A print button at the end of the page can be used to print the report of the values for the selected contact form field in a printer-friendly format.
 
 
 == Installation ==
@@ -80,33 +80,57 @@ To install Contact Form to Email, follow these steps:
 
 = Q: What means each field in the contact form settings area? =
 
-A: The product's page contains detailed information about each field and customization:
-
+A: The Contact Form to Email product's page contains detailed information about each field and customization:
 
 http://wordpress.dwbooster.com/forms/contact-form-to-email
 
-= Q: How can I add specific fields into the email message?
+= Q: How can I add specific fields into the email message? =
 
 A: There is a tag named <%INFO%> that is replaced with all the information posted from the contact form, however you can use also optional tags for specific fields into the contact form.
 
 For doing that, click the desired field into the form builder and in the settings box for that field there is a read-only setting named "Field tag for the message (optional):". Copy & paste that tag into the contact form message text and after the form submission that tag will be replaced with the text entered in the form field.
 
+= Q: The contact form doesn't appear. Only the captcha is shown. What is the solution? = 
+
+A: The cause is in most cases a conflict with a third party plugin or with the theme. To avoid the conflict and display the complete contact form, open the file "form-to-email.php" and in the first lines put this configuration value to "FALSE":
+
+    define('CP_CFEMAIL_DEFER_SCRIPTS_LOADING', false);
+
+... if the problem persists after that modification please contact our support service and we will give you a solution. We will appreciate any feedback to make the contact form avoid conflicts with third party plugins/themes.
+
+
+== Other Notes ==
+
+**Opening the contact form messages in Excel:** Go either to the "Reports" or "Messages" section. There is a button labeled "Export to CSV". CSV files can be opened in Excel, just double-click the downloaded CSV file, it will contain the selected contact form submissions, one per line.
+
+**Deleting a contact form message:** Go to the "Messages" section and use the button labeled "Delete" for the contact form message you want to delete. Each row in that list is a contact form submission.
+
+**Get the contact form email from the user:** The email used as from is a fixed email specified on the contact form settings, this helps to prevent be classified as spam, however when you hit "reply" over the received email, the user's email address will appear allow you to easily reply the contact form messages. The header "Reply-to" is used for this purpose.
+
+**Customizing the captcha image:** The captcha image used in the contact form is 100% implemented into the plugin, this way you don't need to rely on third party services/servers. In addition to the settings for customizing the captcha design you can also replace the font files located into the folder "contact-form-to-email/captcha/". The fonts are used as base for rendering the captcha on the contact form.
+
+**Contact form email format:** The notifications emails sent from the contact form can be either plain-text emails or HTML emails. Plain text emails are preferred in most cases since are easier to edit and pass the anti-spam filters with more probability.
+
+**Contact form Clone button:** The clone button duplicates a complete contact form with its settings. The contact form messages / emails and statistics aren't duplicated.
+
+**Custom contact form submit button:** The submit button of the Contact Form to Email is located into the file "cp-public-int.inc.php". To use a custom submit button edit it at the latest line of that file.
+
 == Screenshots ==
 
 1. Adding fields to the contact form
 2. Editing fields from the contact form
-3. Contact form processing settings
-4. Contact form validation settings
+3. contact form processing settings
+4. contact form validation settings
 5. Inserting a contact form into a page
 6. Built-in captcha image anti-spam protection
 
 == Changelog ==
 
 = 1.0 =
-* First stable version released.
-* More configuration options added.
+* First Contact Form to Email stable version released.
+* More configuration options added on the contact form settings area.
 
 == Upgrade Notice ==
 
 = 1.0.1 =
-First stable version released.
+First Contact Form to Email stable version released.
