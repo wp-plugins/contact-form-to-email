@@ -22,6 +22,41 @@ else if (isset($_GET['ld']) && $_GET['ld'] != '')
     $wpdb->query('DELETE FROM `'.$wpdb->prefix.$this->table_messages.'` WHERE id='.$_GET['ld']);       
     $message = "Item deleted";
 }
+else if (isset($_GET['import']) && $_GET['import'] == '1')
+{    
+    $form = json_decode($this->cleanJSON($this->get_option('form_structure', CP_CFEMAIL_DEFAULT_form_structure)));
+    $form = $form[0];    
+    
+    if (($handle = fopen($_FILES['importfile']['tmp_name'], "r")) !== FALSE) {
+        while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+            $rowdata = array(); 
+            $formatted_data = '';
+            $num = count($data);
+            $row++;
+            
+            $time  = $data[0];
+            $ip    = $data[1];
+            $email = $data[2];
+            
+            for ($c=3; $c < $num; $c++)
+                if (isset($form[$c-3]))
+                {
+                    $rowdata[$form[$c-3]->name] = $data[$c]; //echo $data[$c] . "<br />\n";
+                    $formatted_data .= $form[$c-3]->title. ": ". $data[$c] . "\n\n";
+                }                    
+            $wpdb->insert($wpdb->prefix.$this->table_messages, array( 
+                                   'formid' => $this->item,
+                                   'time' => $time,
+                                   'ipaddr' => $ip,
+                                   'notifyto' => $email,
+                                   'data' => $formatted_data,
+                                   'posted_data' => serialize($rowdata),
+                             ));            
+        }
+        fclose($handle);
+    }    
+    $message = "CSV File Imported.";
+}
 
 if ($this->item != 0)
     $myform = $wpdb->get_results( 'SELECT * FROM '.$wpdb->prefix.$this->table_items .' WHERE id='.$this->item);
@@ -139,6 +174,28 @@ echo paginate_links(  array(
 
 </div>
 
+<?php if ($this->item) { ?>
+<div id="normal-sortables" class="meta-box-sortables">
+
+ <div id="metabox_basic_settings" class="postbox" >
+  <h3 class='hndle' style="padding:5px;"><span>Import CSV File</span></h3>
+  <div class="inside">
+  
+   <form name="CPImportForm" action="admin.php?page=cp_contactformtoemail&cal=<?php echo $this->item; ?>&list=1&import=1" method="post" enctype="multipart/form-data">
+   <input type="file" name="importfile" />
+   <input type="submit" name="pbuttonimport" value="Import"/>
+   <p>Instructions: Comma separated CSV file. One record per line, one field per column. <strong>Don't use a header row with the field names</strong>.</p>
+   <p>The first 3 columns into the CSV file are the <strong>time, IP address and email address</strong>, if you don't have this information then leave the first three columns empty. 
+      After those initial columns the fields (columns) must appear in the same order than in the form.</p>
+   <p>Sample format for the CSV file:</p>
+   <pre>
+    <span style="color:#009900;">2013-04-21 18:50:00, 192.168.1.12, john@sample.com,</span> "john@sample.com", "sample subject", "sample message text"
+    <span style="color:#009900;">2013-05-16 20:49:00, 192.168.1.24, jane.smith@sample.com,</span> "jane.smith@sample.com", "other subject", "other message"
+   </pre>
+   </form>
+  </div>
+</div>
+<?php } ?>
 
 <script type="text/javascript">
  function do_dexapp_print()
