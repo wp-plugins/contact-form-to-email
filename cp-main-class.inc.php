@@ -190,8 +190,8 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
          {
             document.<?php echo $this->prefix; ?>_pform.cp_ref_page.value = document.location;
             <?php if ($this->get_option('cv_enable_captcha', CP_CFEMAIL_DEFAULT_cv_enable_captcha) != 'false') { ?>  $dexQuery = jQuery.noConflict();
-            if (form.hdcaptcha_<?php echo $this->prefix; ?>_post.value == '') { setTimeout( "<?php echo $this->prefix; ?>_cerror()", 100); return false; }
-            var result = $dexQuery.ajax({ type: "GET", url: "<?php echo $this->get_site_url(); ?>?<?php echo $this->prefix; ?>_pform_process=2&hdcaptcha_<?php echo $this->prefix; ?>_post="+form.hdcaptcha_<?php echo $this->prefix; ?>_post.value, async: false }).responseText;
+            if (document.<?php echo $this->prefix; ?>_pform.hdcaptcha_<?php echo $this->prefix; ?>_post.value == '') { setTimeout( "<?php echo $this->prefix; ?>_cerror()", 100); return false; }
+            var result = $dexQuery.ajax({ type: "GET", url: "<?php echo $this->get_site_url(); ?>?<?php echo $this->prefix; ?>_pform_process=2&hdcaptcha_<?php echo $this->prefix; ?>_post="+document.<?php echo $this->prefix; ?>_pform.hdcaptcha_<?php echo $this->prefix; ?>_post.value, async: false }).responseText;
             if (result == "captchafailed") {
                 $dexQuery("#captchaimg").attr('src', $dexQuery("#captchaimg").attr('src')+'&'+Date());
                 setTimeout( "<?php echo $this->prefix; ?>_cerror()", 100);
@@ -208,16 +208,10 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
         {
             // This code won't be used in most cases. This code is for preventing problems in wrong WP themes and conflicts with third party plugins.
             ?>
-                 <script type="text/javascript">
-                    if (typeof jQuery === "undefined") {
-                        <?php $plugin_url = plugins_url('', __FILE__); ?>
-                        document.write ("<"+"script type='text/javascript' src='<?php echo $plugin_url.'/../../../wp-includes/js/jquery/jquery.js'; ?>'></"+"script>");
-                        document.write ("<"+"script type='text/javascript' src='<?php echo $plugin_url.'/../../../wp-includes/js/jquery/ui/jquery.ui.core.min.js'; ?>'></"+"script>");
-                    }
-                    if (typeof jQuery.datepicker === "undefined") {
-                        document.write ("<"+"script type='text/javascript' src='<?php echo $plugin_url.'/../../../wp-includes/js/jquery/ui/jquery.ui.datepicker.min.js'; ?>'></"+"script>");
-                    }
-                 </script>
+                 <?php $plugin_url = plugins_url('', __FILE__); ?>
+                 <script type='text/javascript' src='<?php echo $plugin_url.'/../../../wp-includes/js/jquery/jquery.js'; ?>'></script>
+                 <script type='text/javascript' src='<?php echo $plugin_url.'/../../../wp-includes/js/jquery/ui/jquery.ui.core.min.js'; ?>'></script>
+                 <script type='text/javascript' src='<?php echo $plugin_url.'/../../../wp-includes/js/jquery/ui/jquery.ui.datepicker.min.js'; ?>'></script>  
                  <script type='text/javascript' src='<?php echo plugins_url('js/jQuery.stringify.js', __FILE__); ?>'></script>
                  <script type='text/javascript' src='<?php echo plugins_url('js/jquery.validate.js', __FILE__); ?>'></script>
                  <script type='text/javascript'>
