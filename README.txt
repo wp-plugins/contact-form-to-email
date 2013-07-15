@@ -92,19 +92,14 @@ For doing that, click the desired field into the form builder and in the setting
 
 = Q: The contact form doesn't appear. Only the captcha is shown. What is the solution? = 
 
-A: The cause is in most cases a conflict with a third party plugin or with the theme. To avoid the conflict and display the complete contact form, open the file "form-to-email.php" and in the first lines put this configuration value to "FALSE":
+A: The cause is in most cases a conflict with a third party plugin or with the theme. To fix that, go to the "throubleshoot area" (located below the list of forms in the settings area) change the "Script load method" from "Classic" to "Direct".
 
-    define('CP_CFEMAIL_DEFER_SCRIPTS_LOADING', false);
-
-... if the problem persists after that modification please contact our support service and we will give you a solution. We will appreciate any feedback to make the contact form avoid conflicts with third party plugins/themes.
+If the problem persists after that modification please contact our support service and we will give you a solution. We will appreciate any feedback to make the contact form avoid conflicts with third party plugins/themes.
 
 = Q: I'm having problems with non-latin characters in the contact form. =
 
 A: Use the "throubleshoot area" to change the character encoding. Try first with the UTF-8 option.
 
-= Q: The contact form doesn't appear in the public website. Solution? =
-
-A: In the the "throubleshoot area" (located below the list of forms in the settings area) change the "Script load method" from "Classic" to "Direct".
 
 
 == Other Notes ==
