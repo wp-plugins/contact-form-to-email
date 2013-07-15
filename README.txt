@@ -98,6 +98,14 @@ A: The cause is in most cases a conflict with a third party plugin or with the t
 
 ... if the problem persists after that modification please contact our support service and we will give you a solution. We will appreciate any feedback to make the contact form avoid conflicts with third party plugins/themes.
 
+= Q: I'm having problems with non-latin characters in the contact form. =
+
+A: Use the "throubleshoot area" to change the character encoding. Try first with the UTF-8 option.
+
+= Q: The contact form doesn't appear in the public website. Solution? =
+
+A: In the the "throubleshoot area" (located below the list of forms in the settings area) change the "Script load method" from "Classic" to "Direct".
+
 
 == Other Notes ==
 
