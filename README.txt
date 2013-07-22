@@ -90,7 +90,7 @@ A: There is a tag named <%INFO%> that is replaced with all the information poste
 
 For doing that, click the desired field into the form builder and in the settings box for that field there is a read-only setting named "Field tag for the message (optional):". Copy & paste that tag into the contact form message text and after the form submission that tag will be replaced with the text entered in the form field.
 
-= Q: The contact form doesn't appear. Only the captcha is shown. What is the solution? = 
+= Q: The contact form doesn't appear. What is the solution? = 
 
 A: The cause is in most cases a conflict with a third party plugin or with the theme. To fix that, go to the "throubleshoot area" (located below the list of forms in the settings area) change the "Script load method" from "Classic" to "Direct".
 
