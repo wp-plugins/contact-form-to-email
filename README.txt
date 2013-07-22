@@ -137,3 +137,4 @@ A: Use the "throubleshoot area" to change the character encoding. Try first with
 
 = 1.0.1 =
 First Contact Form to Email stable version released.
+Compatible with the latest WP versions
