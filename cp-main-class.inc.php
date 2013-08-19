@@ -530,9 +530,9 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
         $this->item = intval($this->get_param("cal"));
 
         $cond = '';
-        if ($this->get_param("search")) $cond .= " AND (data like '%".$wpdb->escape($this->get_param("search"))."%' OR posted_data LIKE '%".$wpdb->escape($this->get_param("search"))."%')";
-        if ($this->get_param("dfrom")) $cond .= " AND (`time` >= '".$wpdb->escape($this->get_param("dfrom"))."')";
-        if ($this->get_param("dto")) $cond .= " AND (`time` <= '".$wpdb->escape($this->get_param("dto"))." 23:59:59')";
+        if ($this->get_param("search")) $cond .= " AND (data like '%".esc_sql($this->get_param("search"))."%' OR posted_data LIKE '%".esc_sql($this->get_param("search"))."%')";
+        if ($this->get_param("dfrom")) $cond .= " AND (`time` >= '".esc_sql($this->get_param("dfrom"))."')";
+        if ($this->get_param("dto")) $cond .= " AND (`time` <= '".esc_sql($this->get_param("dto"))." 23:59:59')";
         if ($this->item != 0) $cond .= " AND formid=".$this->item;
 
         $events = $wpdb->get_results( "SELECT * FROM ".$wpdb->prefix.$this->table_messages." WHERE 1=1 ".$cond." ORDER BY `time` DESC" );

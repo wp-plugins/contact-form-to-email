@@ -22,15 +22,15 @@ $date_start = '';
 $date_end = '';
 
 $cond = '';
-if ($_GET["search"] != '') $cond .= " AND (data like '%".$wpdb->escape($_GET["search"])."%' OR posted_data LIKE '%".$wpdb->escape($_GET["search"])."%')";
+if ($_GET["search"] != '') $cond .= " AND (data like '%".esc_sql($_GET["search"])."%' OR posted_data LIKE '%".esc_sql($_GET["search"])."%')";
 if ($_GET["dfrom"] != '') 
 { 
-    $cond .= " AND (`time` >= '".$wpdb->escape($_GET["dfrom"])."')";
+    $cond .= " AND (`time` >= '".esc_sql($_GET["dfrom"])."')";
     $date_start = $_GET["dfrom"];
 }    
 if ($_GET["dto"] != '') 
 {
-    $cond .= " AND (`time` <= '".$wpdb->escape($_GET["dto"])." 23:59:59')";
+    $cond .= " AND (`time` <= '".esc_sql($_GET["dto"])." 23:59:59')";
     $date_end = $_GET["dto"];
 }    
 if ($this->item != 0) $cond .= " AND formid=".$this->item;
