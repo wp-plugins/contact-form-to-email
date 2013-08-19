@@ -14,7 +14,7 @@ $message = "";
 
 if (isset($_GET['lu']) && $_GET['lu'] != '')
 {
-    $wpdb->query('UPDATE `'.$wpdb->prefix.$this->table_messages.'` SET paid='.$wpdb->escape($_GET["status"]).' WHERE id='.$_GET['lu']);           
+    $wpdb->query('UPDATE `'.$wpdb->prefix.$this->table_messages.'` SET paid='.esc_sql($_GET["status"]).' WHERE id='.$_GET['lu']);           
     $message = "Item updated";        
 }
 else if (isset($_GET['ld']) && $_GET['ld'] != '')
@@ -67,9 +67,9 @@ if (!$current_page) $current_page = 1;
 $records_per_page = 50;                                                                                  
 
 $cond = '';
-if ($_GET["search"] != '') $cond .= " AND (data like '%".$wpdb->escape($_GET["search"])."%' OR posted_data LIKE '%".$wpdb->escape($_GET["search"])."%')";
-if ($_GET["dfrom"] != '') $cond .= " AND (`time` >= '".$wpdb->escape($_GET["dfrom"])."')";
-if ($_GET["dto"] != '') $cond .= " AND (`time` <= '".$wpdb->escape($_GET["dto"])." 23:59:59')";
+if ($_GET["search"] != '') $cond .= " AND (data like '%".esc_sql($_GET["search"])."%' OR posted_data LIKE '%".esc_sql($_GET["search"])."%')";
+if ($_GET["dfrom"] != '') $cond .= " AND (`time` >= '".esc_sql($_GET["dfrom"])."')";
+if ($_GET["dto"] != '') $cond .= " AND (`time` <= '".esc_sql($_GET["dto"])." 23:59:59')";
 if ($this->item != 0) $cond .= " AND formid=".$this->item;
 
 $events = $wpdb->get_results( "SELECT * FROM ".$wpdb->prefix.$this->table_messages." WHERE 1=1 ".$cond." ORDER BY `time` DESC" );
