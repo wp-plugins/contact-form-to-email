@@ -100,6 +100,13 @@ If the problem persists after that modification please contact our support servi
 
 A: Use the "throubleshoot area" to change the character encoding. Try first with the UTF-8 option.
 
+= Q: I'm getting this message: "Destination folder already exists". Solution? =
+
+The free version must be deleted before installing the pro version.
+
+If you are uploading a new version via Plugins - New - Upload and a previous version is still installed, then delete the previous version first. This is a safe step, the plugin's data and settings won't be lost during the process.
+
+Another alternative is to overwrite the plugin files through a FTP connection. This is also a safe step.
 
 
 == Other Notes ==
