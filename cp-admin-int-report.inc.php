@@ -84,6 +84,15 @@ if (!isset($_GET["field"])) $_GET["field"] = 'time';
 
 $color_array = array(/**'ff0000',*/'ff4500','ff6347','f08080', 'ff7f50', 'ff8c00', 'ffa500', 'ffa07a', 'fa8072', 'e9967a', 'f5deb3', 'ffe4c4', 'ffebcd', 'ffefd5');
 
+
+if ($this->item)
+{
+    $form = json_decode($this->cleanJSON($this->get_option('form_structure', CP_CFEMAIL_DEFAULT_form_structure)));
+    $form = $form[0];
+}    
+else
+    $form = array();
+            
 ?>
 <link href="<?php echo plugins_url('css/style.css', __FILE__); ?>" type="text/css" rel="stylesheet" />   
 
@@ -156,7 +165,7 @@ $color_array = array(/**'ff0000',*/'ff4500','ff6347','f08080', 'ff7f50', 'ff8c00
  <select name="field" onchange="document.cfm_formrep.submit();">
  <?php
   foreach ($fields as $item => $value)    
-      echo '<option value="'.esc_attr($item).'"'.($_GET["field"]==$item?' selected':'').'>'.$item.'</option>';
+      echo '<option value="'.esc_attr($item).'"'.($_GET["field"]==$item?' selected':'').'>'.$this->get_form_field_label($item,$form).'</option>';
  ?>
  </select>
  <br /><br />
@@ -168,7 +177,7 @@ $color_array = array(/**'ff0000',*/'ff4500','ff6347','f08080', 'ff7f50', 'ff8c00
 
 <div style="border:1px solid black;width:650px;margin-right:10px;padding:0px;float:left;"> 
  <div style="border-bottom:1px solid black;padding:5px;background:#ECECEC;color:#21759B;font-weight: bold;">
-   Report of values for: <em><?php echo $_GET["field"]; ?></em>
+   Report of values for: <em><?php echo $this->get_form_field_label($_GET["field"],$form); ?></em>
  </div>
  
 <div style="padding:10px;">

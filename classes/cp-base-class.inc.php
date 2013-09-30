@@ -87,11 +87,11 @@ class CP_CFTEMAIL_BaseClass {
     {   
         global $wpdb;        
         if ($this->option_buffered_id == $this->item)
-            $value = $this->option_buffered_item->$field;
+            $value = @$this->option_buffered_item->$field;
         else
         {  
            $myrows = $wpdb->get_results( "SELECT * FROM ".$wpdb->prefix.$this->table_items." WHERE id=".$this->item );
-           $value = $myrows[0]->$field;           
+           $value = @$myrows[0]->$field;           
            $this->option_buffered_item = $myrows[0];
            $this->option_buffered_id  = $this->item;
         }

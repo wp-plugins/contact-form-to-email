@@ -33,8 +33,25 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
   <h3 class='hndle' style="padding:5px;"><span>Form Processing / Email Settings</span></h3>
   <div class="inside">
      <table class="form-table">    
+     
         <tr valign="top">
-        <th scope="row">"From" email</th>
+        <th scope="row">Send email "From" </th>
+        <td>
+          <?php $option = $this->get_option('fp_emailfrommethod', "fixed"); ?>
+           <select name="fp_emailfrommethod">
+             <option value="fixed"<?php if ($option == 'fixed') echo ' selected'; ?>>From fixed email address indicated below - Recommended option</option>
+             <option value="customer"<?php if ($option == 'customer') echo ' selected'; ?>>From the email address indicated by the customer</option>
+            </select><br />
+            <span style="font-size:10px;color:#666666">
+            * If you select "from fixed..." the customer email address will appear in the "to" address when you hit "reply", this is the recommended setting to avoid mail server restrictions. 
+            <br />
+            * If you select "from customer email" then the customer email will appear also visually when you receive the email, but this isn't supported by all hosting services, so this
+            option isn't recommended in most cases.
+            </span>
+        </td>
+        </tr>       
+        <tr valign="top">
+        <th scope="row">"From" email (for fixed "from" addresses)</th>
         <td><input type="text" name="fp_from_email" size="40" value="<?php echo esc_attr($this->get_option('fp_from_email', CP_CFEMAIL_DEFAULT_fp_from_email)); ?>" /></td>
         </tr>             
         <tr valign="top">
@@ -82,20 +99,18 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
   <h3 class='hndle' style="padding:5px;"><span>Form Builder</span></h3>
   <div class="inside">   
 
-     <b>* Note: The Form Builder isn't available in this version. <a href="http://wordpress.dwbooster.com/forms/contact-form-to-email" target="_blank">Check a version with the Form Builder enabled here</a>.</b>
-     <br /><br />
      <input type="hidden" name="form_structure" id="form_structure" size="180" value="<?php echo str_replace("\r","",str_replace("\n","",esc_attr($this->cleanJSON($this->get_option('form_structure', CP_CFEMAIL_DEFAULT_form_structure))))); ?>" />
      
      <link href="<?php echo plugins_url('css/style.css', __FILE__); ?>" type="text/css" rel="stylesheet" />   
      <link href="<?php echo plugins_url('css/cupertino/jquery-ui-1.8.20.custom.css', __FILE__); ?>" type="text/css" rel="stylesheet" />   
         
         
-     <script type="text/javascript">       
-       $easyFormQuery = jQuery.noConflict();
+     <script type="text/javascript">                 
        if (typeof jQuery === "undefined") {
           document.write ("<"+"script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></"+"script>");
           document.write ("<"+"script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.20/jquery-ui.min.js'></"+"script>");
        }
+       $easyFormQuery = jQuery.noConflict();
        if (typeof $easyFormQuery == 'undefined')
        {
           // This code won't be used in most cases. This code is for preventing problems in wrong WP themes and conflicts with third party plugins.                  
@@ -145,7 +160,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
            qs += "&font="+f.cv_font.options[f.cv_font.selectedIndex].value;
            qs += "&rand="+d;
            
-           document.getElementById("captchaimg").src= "<?php echo $this->get_site_url().'/?'.$this->prefix.'_captcha=captcha'; ?>"+qs;
+           document.getElementById("captchaimg").src= "<?php echo $this->get_site_url().'/?'.$this->prefix.'_captcha=captcha&inAdmin=1'; ?>"+qs;
         }
 
      </script>
@@ -178,13 +193,33 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
   </div>    
  </div> 
  
+
  <div id="metabox_basic_settings" class="postbox" >
-  <h3 class='hndle' style="padding:5px;"><span>Connect form to PayPal</span></h3>
-  <div class="inside">
-    <b>This feature is available in the plugin <a href="http://wordpress.dwbooster.com/forms/cp-contact-form-with-paypal" target="_blank">CP Contact Form with PayPal</a>.</b>
+  <h3 class='hndle' style="padding:5px;"><span>Submit Button</span></h3>
+  <div class="inside">   
+     <table class="form-table">    
+        <tr valign="top">
+        <th scope="row">Submit button label (text):</th>
+        <td><input type="text" name="vs_text_submitbtn" size="40" value="<?php $label = esc_attr($this->get_option('vs_text_submitbtn', 'Submit')); echo ($label==''?'Submit':$label); ?>" /></td>
+        </tr>
+        <tr valign="top">
+        <th scope="row">Previous button label (text):</th>
+        <td><input type="text" name="vs_text_previousbtn" size="40" value="<?php $label = esc_attr($this->get_option('vs_text_previousbtn', 'Previous')); echo ($label==''?'Previous':$label); ?>" /></td>
+        </tr>    
+        <tr valign="top">
+        <th scope="row">Next button label (text):</th>
+        <td><input type="text" name="vs_text_nextbtn" size="40" value="<?php $label = esc_attr($this->get_option('vs_text_nextbtn', 'Next')); echo ($label==''?'Next':$label); ?>" /></td>
+        </tr>  
+        <tr valign="top">
+        <td colspan="2"> - The  <em>class="pbSubmit"</em> can be used to modify the button styles. <br />
+        - The styles can be applied into any of the CSS files of your theme or into the CSS file <em>"contact-form-to-email\css\stylepublic.css"</em>. <br />
+        - For further modifications the submit button is located at the end of the file <em>"cp-public-int.inc.php"</em>.<br />
+        - For general CSS styles modifications to the form and samples <a href="http://wordpress.dwbooster.com/faq/contact-form-to-email#q77" target="_blank">check this FAQ</a>.
+        </tr>
+     </table>
   </div>    
- </div>   
-   
+ </div> 
+ 
 
  <div id="metabox_basic_settings" class="postbox" >
   <h3 class='hndle' style="padding:5px;"><span>Validation Settings</span></h3>
@@ -317,7 +352,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
          <td colspan="2" rowspan="">
            Preview:<br />
              <br />
-            <img src="<?php echo $this->get_site_url().'/?'.$this->prefix.'_captcha=captcha'; ?>"  id="captchaimg" alt="security code" border="0"  />            
+            <img src="<?php echo $this->get_site_url().'/?'.$this->prefix.'_captcha=captcha&inAdmin=1'; ?>"  id="captchaimg" alt="security code" border="0"  />            
          </td> 
         </tr>             
                 
@@ -353,6 +388,62 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
      </table>  
   </div>    
  </div>    
+ 
+ <div id="metabox_basic_settings" class="postbox" >
+  <h3 class='hndle' style="padding:5px;"><span>Automatic Reports: Send submissions in CSV format via email</span></h3>
+  <div class="inside">
+     <table class="form-table">    
+        <tr valign="top">
+        <th scope="row">Enable Reports?</th>
+        <td>
+          <?php $option = $this->get_option('rep_enable', 'no'); ?>
+          <select name="rep_enable">
+           <option value="no"<?php if ($option == 'no' || $option == '') echo ' selected'; ?>>No</option>
+           <option value="yes"<?php if ($option == 'yes') echo ' selected'; ?>>Yes</option>
+          </select>
+        </td>
+        </tr>
+        <tr valign="top">
+        <th scope="row">Send report every</th>
+        <td><input type="text" name="rep_days" size="4" value="<?php echo esc_attr($this->get_option('rep_days', '1')); ?>" /> days</td>
+        </tr>        
+        <tr valign="top">
+        <th scope="row">Send report after this hour (server time)</th>
+        <td>
+          <select name="rep_hour">
+           <?php
+             $hour = $this->get_option('rep_hour', '0');
+             for ($k=0;$k<24;$k++)
+                 echo '<option value="'.$k.'"'.($hour==$k?' selected':'').'>'.($k<10?'0':'').$k.'</option>';
+           ?>
+          </select>
+        </td>
+        </tr>        
+        <tr valign="top">
+        <th scope="row">Send the report to the following email addresses (comma separated)</th>
+        <td><input type="text" name="rep_emails" size="70" value="<?php echo esc_attr($this->get_option('rep_emails', '')); ?>" /></td>
+        </tr>             
+        <tr valign="top">
+        <th scope="row">Email subject</th>
+        <td><input type="text" name="rep_subject" size="70" value="<?php echo esc_attr($this->get_option('rep_subject', 'Submissions report...')); ?>" /></td>
+        </tr>
+        <tr valign="top">
+        <th scope="row">Email format?</th>
+        <td>
+          <?php $option = $this->get_option('rep_emailformat', 'text'); ?>
+          <select name="rep_emailformat">
+           <option value="text"<?php if ($option != 'html') echo ' selected'; ?>>Plain Text (default)</option>
+           <option value="html"<?php if ($option == 'html') echo ' selected'; ?>>HTML (use html in the textarea below)</option>
+          </select>
+        </td>
+        </tr>  
+        <tr valign="top">
+        <th scope="row">Email Text (CSV file will be attached with the submissions)</th>
+        <td><textarea type="text" name="rep_message" rows="3" cols="80"><?php echo $this->get_option('rep_message', 'Attached you will find the data from the form submissions.'); ?></textarea></td>
+        </tr>        
+     </table>  
+  </div>    
+ </div>   
  
  
 <div id="metabox_basic_settings" class="postbox" >

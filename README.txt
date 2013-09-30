@@ -22,6 +22,7 @@ Contact Form to Email features:
 	► Field validation
 	► Printable reports
 	► One-click contact form
+	► Automatic email reports
 	► ... and more features (see below)
 
 The main purpose of the **Contact Form to Email** is, as the name indicates, to **create contact forms** and **send their data email addresses**.
@@ -35,6 +36,7 @@ In addition to that basic feature it also **saves the contact form data into a d
 * **Printable list of messages:** Get the list of contacts received from the contact form within a selected date range and print it.
 * **Export data to CSV/Excel:** Export the contact form data to a standard format that can be used by other applications. Export the email addresses and other contact form data using date and text search filters.
 * **Automatic reports:** Provide automatic reports of the contact form usage and data entered into the form. Report of daily submissions and accumulative hourly report. Printable reports for specific fields into the contact form. Helps you top understand your data.
+* **Automatic email reports:** Automatic reports sent to the indicated email addresses on a regular period.
 * **Form Validation:** Set validation rules for each contact form field. Keep your data clean.
 * **Anti-spam protection:** Built-it captcha anti-spam protection. No need to rely on external services for the contact form anti-spam protection.
 * **Customizable email messages:** Specify the text of the contact form email notifications. Supports both plain text emails and HTML formatted emails.
@@ -65,6 +67,17 @@ The reports section lets you **analyze the use of the contact forms** and the da
 
 A print button at the end of the page can be used to print the report of the values for the selected contact form field in a printer-friendly format.
 
+= Automatic Email Reports =
+
+The Contact Form to Email plugin allows the setup of two types of automatic (periodical) Email reports:
+
+* **Global Email Reports:** Can be setup below the list of forms. This report sends a report with the new submissions of all forms every the specified number of days.
+
+* **Form Email Reports:** Can be setup on the settings page of each form. This report sends a report with the new submissions of the related form every the specified number of days.
+
+The reports are attached in a CSV / Excel file into the emails. In both cases the destination email addresses, email subject, email text and the report's interval can be specified. More info available in the section "Other Notes".
+
+
 
 == Installation ==
 
@@ -92,13 +105,13 @@ For doing that, click the desired field into the form builder and in the setting
 
 = Q: The contact form doesn't appear. What is the solution? = 
 
-A: The cause is in most cases a conflict with a third party plugin or with the theme. To fix that, go to the "throubleshoot area" (located below the list of forms in the settings area) change the "Script load method" from "Classic" to "Direct".
+A: The cause is in most cases a conflict with a third party plugin or with the theme. To fix that, go to the "troubleshoot area" (located below the list of forms in the settings area) change the "Script load method" from "Classic" to "Direct".
 
 If the problem persists after that modification please contact our support service and we will give you a solution. We will appreciate any feedback to make the contact form avoid conflicts with third party plugins/themes.
 
 = Q: I'm having problems with non-latin characters in the contact form. =
 
-A: Use the "throubleshoot area" to change the character encoding. Try first with the UTF-8 option.
+A: Use the "troubleshoot area" to change the character encoding. Try first with the UTF-8 option.
 
 = Q: I'm getting this message: "Destination folder already exists". Solution? =
 
@@ -123,7 +136,52 @@ Another alternative is to overwrite the plugin files through a FTP connection. T
 
 **Contact form Clone button:** The clone button duplicates a complete contact form with its settings. The contact form messages / emails and statistics aren't duplicated.
 
-**Custom contact form submit button:** The submit button of the Contact Form to Email is located into the file "cp-public-int.inc.php". To use a custom submit button edit it at the latest line of that file.
+= Custom contact form submit button =  
+
+There is a settings section info each form that allows to specify the label of the submit button. 
+
+The class="pbSubmit" can be used to modify the button styles. 
+
+The styles can be applied into any of the CSS files of your theme or into the CSS file "contact-form-to-email\css\stylepublic.css". 
+
+For further modifications the submit button is located at the end of the file "cp-public-int.inc.php".
+
+For general CSS styles modifications to the form and samples check this FAQ entry: http://wordpress.dwbooster.com/faq/contact-form-to-email#q77
+
+
+= Customizing the automatic email reports =  
+
+The settings for the email reports (both the global and per form reports) include the following configuration fields:
+
+* **Enable Reports?:** Option for enabling / disabling the reports.
+* **Send report every:** Indicate every how many days the reports will be sent.
+* **Send after this hour (server time):** Approximate time at which the reports will be sent. This time is based on the server time. Some activity is needed on the website for sending the reports. You can setup a cron for a more exact delivery time.
+* **Send email from:** The "from" email used for the reports. Avoid @aol.com and @hotmail.com "from" addresses to skip the anti-spam filters.
+* **Send to email(s):** The list of emails (comma separated) that will receive the reports.
+* **Email subject:** Subject of the email that will be sent with the Contact Form to Email reports.
+* **Email format?:** Format of the email that will be sent with the Contact Form to Email reports. Can be HTML or Plain Text. In most cases plain text is easier to setup and has less problems with anti-spam services.
+* **Email Text (CSV file will be attached):** Content of the email that will contain the Contact Form to Email reports. The reports will be attached in CSV format into the email.
+
+= Importing messages =  
+
+There is an option to import messages into the Contact Form to Email plugin. That option is located below the messages list and is labeled "Import CSV".
+
+The messages can be imported in a comma separated CSV file. One record per line, one field per column. Don't use a header row with the field names.
+
+The first 3 columns into the CSV file are the time, IP address and email address, if you don't have this information then leave the first three columns empty. After those initial columns the fields (columns) must appear in the same order than in the form.
+
+Sample format for the CSV file:
+
+    2013-04-21 18:50:00, 192.168.1.12, john@sample.com, "john@sample.com", "sample subject", "sample message"
+    2013-05-16 20:49:00, 192.168.1.24, jane.smith@sample.com, "jane.smith@sample.com", "other subject", "other message"
+
+= From address used for the emails =  
+
+Into the "Form Processing / Email Settings" section the first settings field is named "Send email "From" and has the following options:
+
+* **From fixed email address indicated below - Recommended option:**  If you select "from fixed..." the customer email address will appear in the "to" address when you hit "reply", this is the recommended setting to avoid mail server restrictions.
+
+* **From the email address indicated by the customer:** If you select "from customer email" then the customer email will appear also visually when you receive the email, but this isn't supported by all hosting services, so this option isn't recommended in most cases.
 
 == Screenshots ==
 

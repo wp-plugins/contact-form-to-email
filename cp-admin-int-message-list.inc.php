@@ -160,7 +160,17 @@ echo paginate_links(  array(
 	  <tr class='<?php if (!($i%2)) { ?>alternate <?php } ?>author-self status-draft format-default iedit' valign="top">
 		<td><?php echo substr($events[$i]->time,0,16); ?></td>
 		<td><?php echo $events[$i]->notifyto; ?></td>
-		<td><?php echo str_replace("\n","<br />",$events[$i]->data); ?></td>
+		<td><?php 
+		        //echo str_replace("\n","<br />",$events[$i]->data); 
+		        $data = $events[$i]->data;		        
+		        $posted_data = unserialize($events[$i]->posted_data);		        
+		        foreach ($posted_data as $item => $value)
+		            if (strpos($item,"_url") && $value != '')		         
+		            {
+		                $data = str_replace ($posted_data[str_replace("_url","",$item)],'<a href="'.$value.'" target="_blank">'.$posted_data[str_replace("_url","",$item)].'</a><br />',$data);  		                
+		            }    
+		        echo str_replace("\n","<br />",$data); 
+		    ?></td>
 		<td class="cpnopr">
 		  <input type="button" name="caldelete_<?php echo $events[$i]->id; ?>" value="Delete" onclick="cp_deleteMessageItem(<?php echo $events[$i]->id; ?>);" />                             
 		</td>
