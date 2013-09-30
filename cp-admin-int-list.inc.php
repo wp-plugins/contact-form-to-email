@@ -98,7 +98,20 @@ else if (isset($_GET['ac']) && $_GET['ac'] == 'st')
         }
     }
     $message = "Troubleshoot settings updated";
+} 
+else if (isset($_POST["cp_cfte_rep_enable"]))
+{
+    update_option( 'cp_cfte_rep_enable', $_POST["cp_cfte_rep_enable"]);
+    update_option( 'cp_cfte_rep_days', $_POST["cp_cfte_rep_days"]);
+    update_option( 'cp_cfte_rep_hour', $_POST["cp_cfte_rep_hour"]);
+    update_option( 'cp_cfte_rep_emails', $_POST["cp_cfte_rep_emails"]);
+    update_option( 'cp_cfte_fp_from_email', $_POST["cp_cfte_fp_from_email"]);
+    update_option( 'cp_cfte_rep_subject', $_POST["cp_cfte_rep_subject"]);
+    update_option( 'cp_cfte_rep_emailformat', $_POST["cp_cfte_rep_emailformat"]);
+    update_option( 'cp_cfte_rep_message', $_POST["cp_cfte_rep_message"]);
+    $message = "Report settings updated";
 }
+
 
 if ($message) echo "<div id='setting-error-settings_updated' class='updated settings-error'><p><strong>".$message."</strong></p></div>";
 
@@ -155,7 +168,7 @@ if ($message) echo "<div id='setting-error-settings_updated' class='updated sett
         var chs = document.getElementById("cccharsets").value;    
         document.location = 'options-general.php?page=<?php echo $this->menu_parameter; ?>&ac=st&scr='+scr+'&chs='+chs+'&r='+Math.random();
     }    
- } 
+ }
  
 </script>
 
@@ -219,6 +232,67 @@ if ($message) echo "<div id='setting-error-settings_updated' class='updated sett
 
 
  <div id="metabox_basic_settings" class="postbox" >
+  <h3 class='hndle' style="padding:5px;"><span>Automatic email reports for ALL forms: Send submissions in CSV format via email</span></h3>
+  <div class="inside">
+     <form name="updatereportsettings" action="" method="post">
+     <table class="form-table">    
+        <tr valign="top">
+        <td scope="row" colspan="2">Enable Reports?
+          <?php $option = get_option('cp_cfte_rep_enable', 'no'); ?>
+          <select name="cp_cfte_rep_enable">
+           <option value="no"<?php if ($option == 'no' || $option == '') echo ' selected'; ?>>No</option>
+           <option value="yes"<?php if ($option == 'yes') echo ' selected'; ?>>Yes</option>
+          </select>     
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+          Send report every: <input type="text" name="cp_cfte_rep_days" size="1" value="<?php echo esc_attr(get_option('cp_cfte_rep_days', '1')); ?>" /> days
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+          Send after this hour (server time):
+          <select name="cp_cfte_rep_hour">
+           <?php
+             $hour = get_option('cp_cfte_rep_hour', '0');
+             for ($k=0;$k<24;$k++)
+                 echo '<option value="'.$k.'"'.($hour==$k?' selected':'').'>'.($k<10?'0':'').$k.'</option>';
+           ?>
+          </select>
+        </td>
+        <tr valign="top">
+        <th scope="row">Send email from</th>
+        <td><input type="text" name="cp_cfte_fp_from_email" size="70" value="<?php echo esc_attr(get_option('cp_cfte_fp_from_email', get_the_author_meta('user_email', get_current_user_id()) )); ?>" /></td>
+        </tr>       
+        <tr valign="top">
+        <th scope="row">Send to email(s)</th>
+        <td><input type="text" name="cp_cfte_rep_emails" size="70" value="<?php echo esc_attr(get_option('cp_cfte_rep_emails', '')); ?>" /></td>
+        </tr>
+        <tr valign="top">
+        <th scope="row">Email subject</th>
+        <td><input type="text" name="cp_cfte_rep_subject" size="70" value="<?php echo esc_attr(get_option('cp_cfte_rep_subject', 'Submissions report...')); ?>" /></td>
+        </tr>
+        <tr valign="top">
+        <th scope="row">Email format?</th>
+        <td>
+          <?php $option = get_option('cp_cfte_rep_emailformat', 'text'); ?>
+          <select name="cp_cfte_rep_emailformat">
+           <option value="text"<?php if ($option != 'html') echo ' selected'; ?>>Plain Text (default)</option>
+           <option value="html"<?php if ($option == 'html') echo ' selected'; ?>>HTML (use html in the textarea below)</option>
+          </select>
+        </td>
+        </tr>  
+        <tr valign="top">
+        <th scope="row">Email Text (CSV file will be attached)</th>
+        <td><textarea type="text" name="cp_cfte_rep_message" rows="3" cols="80"><?php echo get_option('cp_cfte_rep_message', 'Attached you will find the data from the form submissions.'); ?></textarea></td>
+        </tr>        
+        <tr valign="top">
+        <th scope="row"></th>
+        <td><input type="submit" name="cftesubbtn" value="Update Report Settings" /></td>
+        </tr>        
+     </table>       
+     <p>Note: For setting up a report only for a specific form use the setting area available for that when editing each form settings.</p>
+     </form>
+  </div>    
+ </div>
+
+
+ <div id="metabox_basic_settings" class="postbox" >
   <h3 class='hndle' style="padding:5px;"><span>Troubleshoot Area</span></h3>
   <div class="inside"> 
     <p><strong>Important!</strong>: Use this area <strong>only</strong> if you are experiencing conflicts with third party plugins, with the theme scripts or with the character encoding.</p>
@@ -244,7 +318,7 @@ if ($message) echo "<div id='setting-error-settings_updated' class='updated sett
     </form>
 
   </div>    
- </div> 
+ </div>
 
   
 </div> 
