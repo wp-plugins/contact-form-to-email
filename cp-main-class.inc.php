@@ -866,7 +866,8 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
                         }
                     }
                     if ('html' == get_option('cp_cfte_rep_emailformat','')) $content_type = "Content-Type: text/html; charset=utf-8\n"; else $content_type = "Content-Type: text/plain; charset=utf-8\n";
-                    wp_mail( str_replace(" ","",str_replace(";",",",get_option('cp_cfte_rep_emails',''))), get_option('cp_cfte_rep_subject',''), get_option('cp_cfte_rep_message','')."\n".$text,
+                    if (count($attachments))
+                        wp_mail( str_replace(" ","",str_replace(";",",",get_option('cp_cfte_rep_emails',''))), get_option('cp_cfte_rep_subject',''), get_option('cp_cfte_rep_message','')."\n".$text,
                                     "From: \"".get_option('cp_cfte_fp_from_email','')."\" <".get_option('cp_cfte_fp_from_email','').">\r\n".
                                     $content_type.
                                     "X-Mailer: PHP/" . phpversion(),
@@ -875,7 +876,7 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
             }
 
             // reports for specific forms
-            $forms = $wpdb->get_results("SELECT id,fp_from_email,rep_days,rep_hour,rep_emails,rep_subject,rep_emailformat,rep_message,rep_enable FROM ".$wpdb->prefix.$this->table_items." WHERE rep_emails<>'' AND rep_enable='yes'");
+            $forms = $wpdb->get_results("SELECT id,form_name,fp_from_email,rep_days,rep_hour,rep_emails,rep_subject,rep_emailformat,rep_message,rep_enable FROM ".$wpdb->prefix.$this->table_items." WHERE rep_emails<>'' AND rep_enable='yes'");
             foreach ($forms as $form)  // for each form with the reports enabled
             {
                 $formid = $form->id;
