@@ -338,7 +338,7 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
         if ($this->get_param($this->prefix.'_captcha') == 'captcha' )
         {
             @include_once dirname( __FILE__ ) . '/captcha/captcha.php';
-            return;
+            exit;
         }
 
 
