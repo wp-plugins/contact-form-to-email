@@ -143,7 +143,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
      	   });
      		    
          }); 
-        
+        var randcaptcha = 1;
         function generateCaptcha()
         {            
            var d=new Date();
@@ -158,7 +158,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
            qs += "&bcolor="+f.cv_background.value;
            qs += "&border="+f.cv_border.value;
            qs += "&font="+f.cv_font.options[f.cv_font.selectedIndex].value;
-           qs += "&rand="+d;
+           qs += "&r="+(randcaptcha++);
            
            document.getElementById("captchaimg").src= "<?php echo $this->get_site_url().'/?'.$this->prefix.'_captcha=captcha&inAdmin=1'; ?>"+qs;
         }
