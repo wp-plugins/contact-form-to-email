@@ -1,4 +1,3 @@
-var cpfb_started=false;
 jQuery(function(){
 (function($) {
 	$.fn.fbuilder = function(options){
@@ -38,8 +37,8 @@ jQuery(function(){
 					return opt.typeList[i].name;
 			return "";
 		}
-		for (var i=0;i<opt.typeList.length;i++)
-			$("#tabs-1").append('<div class="button itemForm width40" id="'+opt.typeList[i].id+'">'+opt.typeList[i].name+'</div>');
+		for (var i=0;i<opt.typeList.length;i++)			
+			$("#tabs-1").append('<div class="button width40 '+(((i>5) || (i%2==1))?"n":"itemForm")+'" id="'+opt.typeList[i].id+'">'+opt.typeList[i].name+'</div>');
 		$("#tabs-1").append('<div class="clearer"></div>');
 		if (!opt.pub) $( ".button").button();
 		var items = new Array();
@@ -304,7 +303,6 @@ jQuery(function(){
 			reloadItems();
 		}
 		reloadItems = function() {
-		    if (cpfb_started){alert('* Note: The Form Builder is read-only in this version.');return;}else {cpfb_started=true;}
 			for (var i=0;i<showSettings.formlayoutList.length;i++)
 				$("#fieldlist"+opt.identifier).removeClass(showSettings.formlayoutList[i].id);
 			$("#fieldlist"+opt.identifier).addClass(theForm.formlayout);
@@ -352,7 +350,7 @@ jQuery(function(){
 				$(this).siblings().removeClass("ui-selected");
 				$(this).addClass("ui-selected");
 			});
-			
+			ffunct.saveData("form_structure");
 			//email list
 			var str = "";
 			for (var i=0;i<items.length;i++)
