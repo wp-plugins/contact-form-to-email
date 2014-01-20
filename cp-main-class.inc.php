@@ -282,6 +282,7 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
     public function admin_menu() {
         add_options_page($this->plugin_name.' Options', $this->plugin_name, 'manage_options', $this->menu_parameter, array($this, 'settings_page') );
         add_menu_page( $this->plugin_name.' Options', $this->plugin_name, 'edit_pages', $this->menu_parameter, array($this, 'settings_page') );
+        add_submenu_page( $this->menu_parameter, 'Upgrade to Pro Version', 'Upgrade to Pro Version', 'edit_pages', $this->menu_parameter."_upgrade", array($this, 'settings_page') );
     }
 
 
@@ -302,6 +303,11 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
             else
                 @include_once dirname( __FILE__ ) . '/cp-admin-int.inc.php';
         }
+        else if ($this->get_param("page") == $this->menu_parameter.'_upgrade')
+        {
+            echo("Redirecting to upgrade page...<script type='text/javascript'>document.location='http://wordpress.dwbooster.com/forms/contact-form-to-email#download';</script>");
+            exit;
+        }   
         else
             @include_once dirname( __FILE__ ) . '/cp-admin-int-list.inc.php';
     }

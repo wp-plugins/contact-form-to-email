@@ -14,11 +14,12 @@ Contact form that sends the data to email and also to a database list and CSV fi
 
 Contact Form to Email features:
 
-	► Email delivery & notifications
+	► Email delivery & notifications	
 	► Saves messages into database
 	► Export to Excel / CSV
 	► Printable list of messages
-	► Anti-spam captcha
+	► Basic form builder included	
+	► Anti-spam captcha	
 	► Field validation
 	► Printable reports
 	► One-click contact form
@@ -77,6 +78,9 @@ The Contact Form to Email plugin allows the setup of two types of automatic (per
 
 The reports are attached in a CSV / Excel file into the emails. In both cases the destination email addresses, email subject, email text and the report's interval can be specified. More info available in the section "Other Notes".
 
+= New: Form Builder =
+
+In the latest update a basic form builder was included to visually add/modify/delete text fields, text-areas and emails with their respective validations.
 
 
 == Installation ==
@@ -115,11 +119,30 @@ A: Use the "troubleshoot area" to change the character encoding. Try first with 
 
 = Q: I'm getting this message: "Destination folder already exists". Solution? =
 
-The free version must be deleted before installing the pro version.
+A: The free version must be deleted before installing the pro version.
 
 If you are uploading a new version via Plugins - New - Upload and a previous version is still installed, then delete the previous version first. This is a safe step, the plugin's data and settings won't be lost during the process.
 
 Another alternative is to overwrite the plugin files through a FTP connection. This is also a safe step.
+
+
+= Q: How to edit or remove the form title / header? =
+
+A: Into the form builder in the administration area, click the "Form Settings" tab. That area is for editing the form title and header text.
+
+It can be used also for different alignment of the field labels.
+
+= Q: Can I align the form horizontally in two or more columns? =
+
+A: Into the form editor click a field and into its settings there is one field named "Add Css Layout Keywords". Into that field you can put the name of a CSS class that will be applied to the field.
+
+There are some pre-defined CSS classes to use align two, three or four fields into the same line. The CSS classes are named:
+
+    column2
+    column3
+    column4
+
+For example if you want to put two fields into the same horizontal line then specify for both fields the class name "column2".
 
 
 == Other Notes ==

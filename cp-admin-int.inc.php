@@ -190,6 +190,21 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
          
      </div>        
    
+  <div style="border:1px dotted black;background-color:#ffffaa;padding-left:15px;padding-right:15px;padding-top:5px;width:550px;font-size:12px;color:#000000;"> 
+   <p>The form builder supports 3 fields in this version: "Single Line Text", "Email" and "Text-area".</p>
+   <p>The full set of fields is available in the <a href="http://wordpress.dwbooster.com/forms/contact-form-to-email#download">pro version</a>. The <a href="http://wordpress.dwbooster.com/forms/contact-form-to-email#download">pro version</a> also supports:
+   <ul>
+    <li> - Dependand fields: Hide/show fields based in previous selections.</li>
+    <li> - File uploads</li>
+    <li> - Multi-page forms</li>
+    <li> - Publish it as a widget in the sidebar</li>
+    <li> - ...and more fields and validations</li>
+   </ul>
+   <p>There are also other plugins with similar features (not exactly the same features) but adding <a href="http://wordpress.org/extend/plugins/cp-contact-form-with-paypal/">the connection of the form to PayPal</a> or with <a href="http://wordpress.org/plugins/calculated-fields-form/">calculated fields</a>.</p>
+   </p>
+   
+  </div>
+   
   </div>    
  </div> 
  
