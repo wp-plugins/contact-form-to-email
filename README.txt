@@ -226,3 +226,4 @@ Into the "Form Processing / Email Settings" section the first settings field is 
 = 1.0.1 =
 First Contact Form to Email stable version released.
 Compatible with the latest WP versions
+Added functional form builder
