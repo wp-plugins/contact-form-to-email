@@ -129,7 +129,7 @@ if ($message) echo "<div id='setting-error-settings_updated' class='updated sett
 
 
 echo paginate_links(  array(
-    'base'         => 'admin.php?page=<?php echo $this->menu_parameter; ?>&cal='.$this->item.'&list=1%_%&dfrom='.urlencode($_GET["dfrom"]).'&dto='.urlencode($_GET["dto"]).'&search='.urlencode($_GET["search"]),
+    'base'         => 'admin.php?page='.$this->menu_parameter.'&cal='.$this->item.'&list=1%_%&dfrom='.urlencode($_GET["dfrom"]).'&dto='.urlencode($_GET["dto"]).'&search='.urlencode($_GET["search"]),
     'format'       => '&p=%#%',
     'total'        => $total_pages,
     'current'      => $current_page,
