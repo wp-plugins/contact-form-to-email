@@ -131,7 +131,7 @@ else
 
 <div style="border:1px solid black;width:320px;margin-right:10px;padding:0px;float:left;"> 
  <div style="border-bottom:1px solid black;padding:5px;background:#ECECEC;color:#21759B;font-weight: bold;">
-   Submisions per day
+   Submissions per day
  </div>
  <div class="canvas" id="cardiocontainer1" style="margin-left:10px;">
   <canvas id="cardio1"  width="300" height="200" questions='[{"color":"#00f","values":[<?php echo $daily_messages; ?>]}]'></canvas>
@@ -141,7 +141,7 @@ else
 
 <div style="border:1px solid black;width:330px;margin:0px;padding:0px;float:left;"> 
  <div style="border-bottom:1px solid black;padding:5px;background:#ECECEC;color:#21759B;font-weight: bold;">
-   Submisions per hour
+   Submissions per hour
  </div>
  <div class="canvas" id="cardiocontainer2" style="margin-left:10px;">
   <canvas id="cardio2"  width="312" height="200" questions='[{"color":"#00f","values":[<?php echo $hourly_messages; ?>]}]'></canvas>
