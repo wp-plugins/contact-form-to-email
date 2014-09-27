@@ -1,7 +1,7 @@
 === Contact Form to Email ===
 Contributors: codepeople
 Donate link: http://wordpress.dwbooster.com/forms/contact-form-to-email
-Tags: contact form,contact,email,contact form database,form,contact form excel,feedback,captcha,contact form plugin,form to email,form to database,contact form builder,form to csv,wordpress contact form,csv,contact form reports,form to excel,contact form csv,excel
+Tags: contact form,contact,email,contact form database,form,contact form excel,feedback,captcha,contact form plugin,form to email,form to database,contact form builder,form to csv,wordpress contact form,csv,contact form reports,form to excel,contact form csv,drag and drop contact form,excel
 Requires at least: 3.0.5
 Tested up to: 4.0
 Stable tag: 1.0.1
@@ -40,7 +40,9 @@ In addition to that basic feature it also **saves the contact form data into a d
 * **Automatic email reports:** Automatic reports sent to the indicated email addresses on a regular period.
 * **Form Validation:** Set validation rules for each contact form field. Keep your data clean.
 * **Anti-spam protection:** Built-it captcha anti-spam protection. No need to rely on external services for the contact form anti-spam protection.
+* **Drag and drop contact form builder:** A basic and easy to use contact form builder for customizing the form fields and form validation.
 * **Customizable email messages:** Specify the text of the contact form email notifications. Supports both plain text emails and HTML formatted emails.
+* **Multi language support:** The contact form builder allows to enter the field labels and validations in any language. It supports special characters.
 
 = Messages List =
 
@@ -95,12 +97,6 @@ To install Contact Form to Email, follow these steps:
 
 == Frequently Asked Questions ==
 
-= Q: What means each field in the contact form settings area? =
-
-A: The Contact Form to Email product's page contains detailed information about each field and customization:
-
-http://wordpress.dwbooster.com/forms/contact-form-to-email
-
 = Q: How can I add specific fields into the email message? =
 
 A: There is a tag named <%INFO%> that is replaced with all the information posted from the contact form, however you can use also optional tags for specific fields into the contact form.
@@ -144,6 +140,105 @@ There are some pre-defined CSS classes to use align two, three or four fields in
 
 For example if you want to put two fields into the same horizontal line then specify for both fields the class name "column2".
 
+= Q: What means each field in the contact form settings area? =
+
+A: For each contact form you will be able to edit the following settings:
+
+**Form Processing / Email Settings:**
+
+* **Send email "From":** Indicate if the email will be sent from a fixed email address or from the email address entered by the customer. This is explained in more detail in the "Other notes" tab.
+* **"from" email:** The email used as from in the notifications (for fixed "from" addresses).
+* **Destination emails (comma separated):** List of administrators that will receive the email notification.
+* **Email subject:** Subject of the notification email sent after completing the payment.
+* **Include additional information?:** Optional information about the user IP and browser.
+* **Thank you page (after sending the message):** After the completing the payment the user may go back to a page into your website (usually a "thank you" page). Type the page address into this field.
+* **Email format?:** Select if the email will be sent as plain-text or HTML-formatted.
+* **Message:** Content of the notification email that you will receive after each submission of the contact form. Keep the tag <%INFO%>, it will be replaced automatically with the form data send by the user.
+
+**Form Builder:** The drag and drop contact form builder. It's explained in detail in the "Other notes" tab.
+
+**Submit button:** To specify the label of the contact form submit button (no need to add it from the visual contact form builder). Contains also other settings and instructions for further customizations to the contact form submit button and contact form CSS sytles.
+
+**Validation Settings:** This area contains the "texts" used for the contact form validations. You can easily translate them to other languages.
+
+**Email Copy to User:**
+
+* **Send confirmation/thank you message to user?:** Select if you want to sent the "confirmation/thank you" message to the user.
+* **Email field on the form:** Select here the field that contains the user's email on the contact form.
+* **Email subject:** Subject of the email sent to the user after payment
+* **Email format?:** Select if the email will be sent as plain-text or HTML-formatted.
+* **Message:** Content of the email sent to the user after payment. The tag <%INFO%> will be replaced by the information sent using the contact form, if needed.
+
+**Captcha Verification:**
+
+* **Use Captcha Verification?:** Select if the captcha image will be used in the contact form to prevent spam.
+* **Width:** Width of the captcha image.
+* **Height:** Height of the captcha image.
+* **Chars:** How many characters will appear in the captcha image.
+* **Min font size:** Minimum size used for the font (randomized).
+* **Max font size:** Maximum size used for the font (randomized).
+* **Preview:** Preview for checking how the captcha image will look.
+* **Noise:** Amount of noise to make it stronger.
+* **Noise Length:** Length of the noise to modify its look.
+* **Background:** Background color.
+* **Border:** Border color.
+* **Font:** Base font used to render the text. Four options already included.
+
+**Automatic Reports. Send submissions in CSV format via email:** This area contains many settings to automatically send reports every the specified period of time containing the data of all the contact forms submitted during that period of time. The report settings are explained more in detail in the tab "Other Notes" (see "Customizing the automatic email reports"). Note: All the submissions are stored into the contact form database, so can be easily recovered when needed.
+
+= Q: How can I apply CSS styles to the contact form fields? =
+
+A: To modify the **whole styles of the contact form fields and labels**, edit the styles file "wp-content/plugins/contact-form-to-email/css/stylepublic.css" and add these rules at the end of that file:
+
+* **Change the styles of all the field labels:**
+
+    #fbuilder, #fbuilder label, #fbuilder span {
+        color: #00f;
+    }
+
+* **Change the styles of all the input and textarea fields:**
+
+    #fbuilder input[type=text], #fbuilder textarea, #fbuilder select {
+        border: 2px solid #00f;
+    }
+
+* **Change the contact form submit button:**
+
+    #fbuilder .pbSubmit {
+        color: #00f;
+        font-weight: bold;
+    }
+
+* **Change the "contact form title" and "header description":**
+
+    #fbuilder .fform h1 {font-size:32px;}
+    #fbuilder .fform span {font-size:16px;}
+
+**On the other hand to modify only a specific field into the contact form:**
+
+* **Step #1:** Into the contact form builder, click a field to edit its details, there is a setting there named "Add CSS Layout Keywords".
+
+* **Step #2:** You can add a class name into that field, so the style specified into the CSS class will be applied to that field.
+
+* **Step #3 (Note):** Don't add style rules directly there in the contact form builder but the the name of a CSS class.
+
+* **Step #4:** You can place the CSS class either into the CSS file of your template or into the file "wp-content/plugins/contact-form-to-email/css/stylepublic.css" located into the Contact Form to Email plugin's folder.
+
+**Examples:** Add a class named "specialclass" into the setting "Add CSS Layout Keywords" and add one of these CSS rules into the mentioned file: 
+
+* For changing the field label:
+
+    .specialclass label {
+        color: #00f;
+    }
+
+* For changing the input or textarea of the field:
+
+    .specialclass input[type=text],.specialclass textarea,.specialclass select {
+        border: 2px solid #00f;
+    }
+
+To get the modifications shown into the public contact form you may have to refresh the page twice or clear the browser cache to be sure that the old CSS styles aren't still being shown from the cache.
 
 == Other Notes ==
 
@@ -185,6 +280,10 @@ The settings for the email reports (both the global and per form reports) includ
 * **Email format?:** Format of the email that will be sent with the Contact Form to Email reports. Can be HTML or Plain Text. In most cases plain text is easier to setup and has less problems with anti-spam services.
 * **Email Text (CSV file will be attached):** Content of the email that will contain the Contact Form to Email reports. The reports will be attached in CSV format into the email.
 
+= The contact form database =  
+
+The messages received via the contact form are stored into the WordPress contact form database table "wp_cftemail_messages". You can export that data in form of automatic email reports or in CSV/Excel format from the messages list area. If needed you can also query that table directly for further processing of the contact form data.
+
 = Importing messages =  
 
 There is an option to import messages into the Contact Form to Email plugin. That option is located below the messages list and is labeled "Import CSV".
@@ -205,6 +304,37 @@ Into the "Form Processing / Email Settings" section the first settings field is 
 * **From fixed email address indicated below - Recommended option:**  If you select "from fixed..." the customer email address will appear in the "to" address when you hit "reply", this is the recommended setting to avoid mail server restrictions.
 
 * **From the email address indicated by the customer:** If you select "from customer email" then the customer email will appear also visually when you receive the email, but this isn't supported by all hosting services, so this option isn't recommended in most cases.
+
+= The drag and drop contact form builder =  
+
+The Form Builder lets you to add/edit/remove fields into the contact form and also to specify the validation rules for your contact form (required fields, email fields, etc...). 
+
+The following field types are currently available in the version published at this WordPress directory:
+
+* **Single Line Text:** Classic one-line text input.
+* **Email:** This field validates that the email address has a valid format.
+* **Paragraph Text:** Classic multi-line (textarea) text input.
+
+In other versions of the plugin the following field are also available: Numeric field with specific validations, Date-picker, Checkboxes, Multiple Choice Radio buttons, Dropdown / Select, Upload file fields, Password, Phone with specific validations, static texts, section breaks and page breaks for multi-page contact forms.
+
+**Other features in the contact form builder:**
+
+ * **Equal fields validation:** Use it for example to confirm if the email or text typed in two different fields are the same. This is valid for "Single Line Text" and "Email" fields.
+
+ * **Dependent fields:** Use this feature for show/hide fields (any field type) based in the selection made on other fields (checkboxes, radiobuttons or select/drop-down fields). This feature isn't fully available in this version since the related fields aren't included.
+
+**Editing the field settings in the Contact Form Builder:**
+
+When you click a field already added into the contact form builder area, you can edit its details and validation rules. The following properties are available:
+
+ * **Field Label:** Label for the field in the public contact form and into the email.
+ * **Field tag for the message:** In addition to the general %INFORMATION% tag, you can use this tag to show the field value into a specific tag of the email. More info at the WordPress Contact Form to Email FAQ.
+ * **Specific settings:** The settings depends of the field type.
+ * **Validation rule:** The validation rules depends of the field type, example: required, valid email, ...
+ * **Predefined value:** Pre-filled value for the field, if any.
+ * **Instructions for user:** This text will appear in a smaller form below the field. It's useful for giving instructions to the user.
+ * **Add CSS layout keywords:** Customize the look & feel. More info at the WordPress Contact Form to Email FAQ.
+
 
 == Screenshots ==
 
