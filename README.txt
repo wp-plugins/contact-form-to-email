@@ -192,27 +192,27 @@ A: To modify the **whole styles of the contact form fields and labels**, edit th
 
 * **Change the styles of all the field labels:**
 
-    #fbuilder, #fbuilder label, #fbuilder span {
+        #fbuilder, #fbuilder label, #fbuilder span {
         color: #00f;
-    }
+        }
 
 * **Change the styles of all the input and textarea fields:**
 
-    #fbuilder input[type=text], #fbuilder textarea, #fbuilder select {
+        #fbuilder input[type=text], #fbuilder textarea, #fbuilder select {
         border: 2px solid #00f;
-    }
+        }
 
 * **Change the contact form submit button:**
 
-    #fbuilder .pbSubmit {
+        #fbuilder .pbSubmit {
         color: #00f;
         font-weight: bold;
-    }
+        }
 
 * **Change the "contact form title" and "header description":**
 
-    #fbuilder .fform h1 {font-size:32px;}
-    #fbuilder .fform span {font-size:16px;}
+        #fbuilder .fform h1 {font-size:32px;}
+        #fbuilder .fform span {font-size:16px;}
 
 **On the other hand to modify only a specific field into the contact form:**
 
@@ -228,15 +228,15 @@ A: To modify the **whole styles of the contact form fields and labels**, edit th
 
 * For changing the field label:
 
-    .specialclass label {
+        .specialclass label {
         color: #00f;
-    }
+        }
 
 * For changing the input or textarea of the field:
 
-    .specialclass input[type=text],.specialclass textarea,.specialclass select {
+        .specialclass input[type=text],.specialclass textarea,.specialclass select {
         border: 2px solid #00f;
-    }
+        }
 
 To get the modifications shown into the public contact form you may have to refresh the page twice or clear the browser cache to be sure that the old CSS styles aren't still being shown from the cache.
 
