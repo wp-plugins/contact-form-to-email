@@ -66,7 +66,7 @@ The reports section lets you **analyze the use of the contact forms** and the da
 
 * **Submissions per hour:** The report will display in a point-lines graphic how many contact form messages are received on each hour of the date; this is for the total messages in the selected date range. This report can be used for checking peak hours and focus the support service on those hours.
 
-* **Report of values for a selected field:** Select any of the contact form fields and other information fields (like date, ip, hours) to get a report of how many times each value have been entered or selected. This is very useful if you form is used as a poll to get feedback from users, it makes easy to generate a report on selectable contact form fields. This report can be used also to study the most common data entered in the contact form and get a better idea of your customer's profile and needs.
+* **Report of values for a selected field:** Select any of the contact form fields and other information fields (like date, IP address, hours) to get a report of how many times each value have been entered or selected. This is very useful if you form is used as a poll to get feedback from users, it makes easy to generate a report on selectable contact form fields. This report can be used also to study the most common data entered in the contact form and get a better idea of your customer's profile and needs.
 
 A print button at the end of the page can be used to print the report of the values for the selected contact form field in a printer-friendly format.
 
@@ -157,7 +157,7 @@ A: For each contact form you will be able to edit the following settings:
 
 **Form Builder:** The drag and drop contact form builder. It's explained in detail in the "Other notes" tab.
 
-**Submit button:** To specify the label of the contact form submit button (no need to add it from the visual contact form builder). Contains also other settings and instructions for further customizations to the contact form submit button and contact form CSS sytles.
+**Submit button:** To specify the label of the contact form submit button (no need to add it from the visual contact form builder). Contains also other settings and instructions for further customizations to the contact form submit button and contact form CSS styles.
 
 **Validation Settings:** This area contains the "texts" used for the contact form validations. You can easily translate them to other languages.
 
@@ -220,7 +220,7 @@ A: To modify the **whole styles of the contact form fields and labels**, edit th
 
 * **Step #2:** You can add a class name into that field, so the style specified into the CSS class will be applied to that field.
 
-* **Step #3 (Note):** Don't add style rules directly there in the contact form builder but the the name of a CSS class.
+* **Step #3 (Note):** Don't add style rules directly there in the contact form builder but the name of a CSS class.
 
 * **Step #4:** You can place the CSS class either into the CSS file of your template or into the file "wp-content/plugins/contact-form-to-email/css/stylepublic.css" located into the Contact Form to Email plugin's folder.
 
