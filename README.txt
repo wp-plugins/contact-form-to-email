@@ -18,7 +18,7 @@ Contact Form to Email features:
 	► Saves messages into database
 	► Export to Excel / CSV
 	► Printable list of messages
-	► Basic form builder included	
+	► Visual drag and drop form builder	
 	► Anti-spam captcha	
 	► Field validation
 	► Printable reports
