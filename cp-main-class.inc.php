@@ -505,6 +505,10 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
             if (strpos($item,"_link"))
                 $attachments[] = $value;
         }
+        
+        $message = str_replace('<%itemnumber%>',$itemnumber,$message);
+        $subject = str_replace('<%itemnumber%>',$itemnumber,$subject);
+                
         $from = $this->get_option('fp_from_email', @CP_CFEMAIL_DEFAULT_fp_from_email);
         $to = explode(",",$this->get_option('fp_destination_emails', @CP_CFEMAIL_DEFAULT_fp_destination_emails));
         if ('html' == $this->get_option('fp_emailformat', CP_CFEMAIL_DEFAULT_email_format)) $content_type = "Content-Type: text/html; charset=utf-8\n"; else $content_type = "Content-Type: text/plain; charset=utf-8\n";
