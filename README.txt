@@ -99,9 +99,15 @@ To install Contact Form to Email, follow these steps:
 
 = Q: How can I add specific fields into the email message? =
 
-A: There is a tag named <%INFO%> that is replaced with all the information posted from the contact form, however you can use also optional tags for specific fields into the contact form.
+A: There is a tag named %lt;%INFO%&gt; that is replaced with all the information posted from the contact form, however you can use also optional tags for specific fields into the contact form.
 
 For doing that, click the desired field into the form builder and in the settings box for that field there is a read-only setting named "Field tag for the message (optional):". Copy & paste that tag into the contact form message text and after the form submission that tag will be replaced with the text entered in the form field.
+
+
+= Q: Can I add a reference to the item number (submission number) into the email? =
+
+A: Use the tag &lt;%itemnumber%&gt; into the email content. That tag will be replaced by the contact form submission item number.
+
 
 = Q: The contact form doesn't appear. What is the solution? = 
 
@@ -109,9 +115,11 @@ A: The cause is in most cases a conflict with a third party plugin or with the t
 
 If the problem persists after that modification please contact our support service and we will give you a solution. We will appreciate any feedback to make the contact form avoid conflicts with third party plugins/themes.
 
+
 = Q: I'm having problems with non-latin characters in the contact form. =
 
 A: Use the "troubleshoot area" to change the character encoding. Try first with the UTF-8 option.
+
 
 = Q: I'm getting this message: "Destination folder already exists". Solution? =
 
