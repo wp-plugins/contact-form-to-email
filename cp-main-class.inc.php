@@ -386,6 +386,9 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
             exit;
     	}
 
+        foreach ($_POST as $item => $value)
+            $_POST[$item] = stripcslashes($value);
+            
         // get form info
         //---------------------------
         require_once(ABSPATH . "wp-admin" . '/includes/file.php');
