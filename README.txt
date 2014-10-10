@@ -99,10 +99,11 @@ To install Contact Form to Email, follow these steps:
 
 = Q: How can I add specific fields into the email message? =
 
-A: There is a tag named %lt;%INFO%&gt; that is replaced with all the information posted from the contact form, however you can use also optional tags for specific fields into the contact form.
+A: There is a tag named &lt;%INFO%&gt; that is replaced with all the information posted from the contact form, however you can use also optional tags for specific fields into the contact form.
 
 For doing that, click the desired field into the form builder and in the settings box for that field there is a read-only setting named "Field tag for the message (optional):". Copy & paste that tag into the contact form message text and after the form submission that tag will be replaced with the text entered in the form field.
 
+The tags have this structure (example): &lt;%fieldname1%&gt;, &lt;%fieldname2%&gt;, &lt;%fieldname3%&gt;, ...
 
 = Q: Can I add a reference to the item number (submission number) into the email? =
 
@@ -362,6 +363,11 @@ When you click a field already added into the contact form builder area, you can
 == Upgrade Notice ==
 
 = 1.0.1 =
-First Contact Form to Email stable version released.
-Compatible with the latest WP versions
-Added functional form builder
+* Compatible with the latest WP versions
+* New automatic CSV report options
+* Added functional form builder
+* Improved CSS styles to avoid CSS conflicts
+* Fixed conflict of the captcha image with some third party plugins
+* Fixed bug in pagination links
+* New feature for adding submission number into the emails
+* Fixed bug with back slashes on submissions
