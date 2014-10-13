@@ -80,6 +80,10 @@ The Contact Form to Email plugin allows the setup of two types of automatic (per
 
 The reports are attached in a CSV / Excel file into the emails. In both cases the destination email addresses, email subject, email text and the report's interval can be specified. More info available in the section "Other Notes".
 
+= Updates =
+
+New features has been published in the current Contact Form to Email version 1.0.1 based on the feedback received and we would like to thank you all the people that have supported the development, provided feedback and feature requests. The plugin is currently over the 80,000 downloads/installations and a new set of updates is already being prepared, any feature requests will be welcome. Thank you!
+
 = New: Form Builder =
 
 In the latest update a basic form builder was included to visually add/modify/delete text fields, text-areas and emails with their respective validations.
