@@ -682,6 +682,7 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
         $filename = str_replace("/","_",$filename);
         $filename = str_replace("\\","_",$filename);
         $filename = str_replace("?","",$filename);
+        $filename = str_replace("%","_",$filename);
         return $filename;
     }
 
