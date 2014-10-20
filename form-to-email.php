@@ -43,7 +43,7 @@ define('CP_CFEMAIL_DEFAULT_cv_chars', '5');
 define('CP_CFEMAIL_DEFAULT_cv_font', 'font-1.ttf');
 define('CP_CFEMAIL_DEFAULT_cv_min_font_size', '25');
 define('CP_CFEMAIL_DEFAULT_cv_max_font_size', '35');
-define('CP_CFEMAIL_DEFAULT_cv_noise', '200');
+define('CP_CFEMAIL_DEFAULT_cv_noise', '190');
 define('CP_CFEMAIL_DEFAULT_cv_noise_length', '4');
 define('CP_CFEMAIL_DEFAULT_cv_background', 'ffffff');
 define('CP_CFEMAIL_DEFAULT_cv_border', '000000');
