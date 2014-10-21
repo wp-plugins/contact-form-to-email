@@ -282,7 +282,7 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
     public function admin_menu() {
         add_options_page($this->plugin_name.' Options', $this->plugin_name, 'manage_options', $this->menu_parameter, array($this, 'settings_page') );
         add_menu_page( $this->plugin_name.' Options', $this->plugin_name, 'edit_pages', $this->menu_parameter, array($this, 'settings_page') );
-        add_submenu_page( $this->menu_parameter, 'Upgrade to Pro Version', 'Upgrade to Pro Version', 'edit_pages', $this->menu_parameter."_upgrade", array($this, 'settings_page') );
+        add_submenu_page( $this->menu_parameter, 'Upgrade', 'Upgrade', 'edit_pages', $this->menu_parameter."_upgrade", array($this, 'settings_page') );
     }
 
 
