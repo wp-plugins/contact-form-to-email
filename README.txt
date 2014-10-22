@@ -36,7 +36,7 @@ In addition to that basic feature it also **saves the contact form data into a d
 * **Form data saved into the database:** Avoid losing submissions and keep a record of the received contact form messages.
 * **Printable list of messages:** Get the list of contacts received from the contact form within a selected date range and print it.
 * **Export data to CSV/Excel:** Export the contact form data to a standard format that can be used by other applications. Export the email addresses and other contact form data using date and text search filters.
-* **Automatic reports:** Provide automatic reports of the contact form usage and data entered into the form. Report of daily submissions and accumulative hourly report. Printable reports for specific fields into the contact form. Helps you top understand your data.
+* **Automatic reports:** Provide automatic reports of the contact form usage and data entered into the form. Report of daily submissions and accumulative hourly report. Printable reports for specific fields into the contact form. Helps you to understand your data.
 * **Automatic email reports:** Automatic reports sent to the indicated email addresses on a regular period.
 * **Form Validation:** Set validation rules for each contact form field. Keep your data clean.
 * **Anti-spam protection:** Built-it captcha anti-spam protection. No need to rely on external services for the contact form anti-spam protection.
