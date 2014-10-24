@@ -60,7 +60,6 @@ $cp_plugin = new CP_ContactFormToEmail;
 register_activation_hook(__FILE__, array($cp_plugin,'install') ); 
 add_action( 'media_buttons', array($cp_plugin, 'insert_button'), 11);
 add_action( 'init', array($cp_plugin, 'data_management'));
-add_action( 'widgets_init', create_function('', 'return register_widget("CP_ContactFormToEmail_Widget");') );
 
 if ( is_admin() ) {    
     add_action('admin_enqueue_scripts', array($cp_plugin,'insert_adminScripts'), 1);    
