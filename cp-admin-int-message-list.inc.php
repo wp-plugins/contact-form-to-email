@@ -160,8 +160,7 @@ echo paginate_links(  array(
 	  <tr class='<?php if (!($i%2)) { ?>alternate <?php } ?>author-self status-draft format-default iedit' valign="top">
 		<td><?php echo substr($events[$i]->time,0,16); ?></td>
 		<td><?php echo $events[$i]->notifyto; ?></td>
-		<td><?php 
-		        //echo str_replace("\n","<br />",$events[$i]->data); 
+		<td><?php  
 		        $data = $events[$i]->data;		        
 		        $posted_data = unserialize($events[$i]->posted_data);		        
 		        foreach ($posted_data as $item => $value)
