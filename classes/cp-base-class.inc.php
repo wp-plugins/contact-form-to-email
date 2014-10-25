@@ -75,7 +75,9 @@ class CP_CFTEMAIL_BaseClass {
         {               
             $sql = "ALTER TABLE  `".$table."` ADD `".$field."` ".$type; 
             $wpdb->query($sql);
+            return true;
         }
+        return false;
     }    
     
     
