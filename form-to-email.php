@@ -38,7 +38,7 @@ define('CP_CFEMAIL_DEFAULT_vs_text_min', 'Please enter a value greater than or e
 
 define('CP_CFEMAIL_DEFAULT_cv_enable_captcha', 'true');
 define('CP_CFEMAIL_DEFAULT_cv_width', '180');
-define('CP_CFEMAIL_DEFAULT_cv_height', '60');
+define('CP_CFEMAIL_DEFAULT_cv_height', '65');
 define('CP_CFEMAIL_DEFAULT_cv_chars', '5');
 define('CP_CFEMAIL_DEFAULT_cv_font', 'font-1.ttf');
 define('CP_CFEMAIL_DEFAULT_cv_min_font_size', '25');
