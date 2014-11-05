@@ -375,3 +375,5 @@ When you click a field already added into the contact form builder area, you can
 * Fixed bug in pagination links
 * New feature for adding submission number into the emails
 * Fixed bug with back slashes on submissions
+
+Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
