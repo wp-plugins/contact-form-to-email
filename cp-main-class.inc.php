@@ -391,7 +391,7 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
     	}
 
         foreach ($_POST as $item => $value)
-            $_POST[$item] = stripcslashes($value);
+            $_POST[$item] = (is_array($value)?$value:stripcslashes($value));
             
         // get form info
         //---------------------------
