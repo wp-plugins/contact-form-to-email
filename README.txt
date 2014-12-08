@@ -348,6 +348,16 @@ When you click a field already added into the contact form builder area, you can
  * **Instructions for user:** This text will appear in a smaller form below the field. It's useful for giving instructions to the user.
  * **Add CSS layout keywords:** Customize the look & feel. More info at the WordPress Contact Form to Email FAQ.
 
+= Language Support =
+
+The Contact Form to Email plugin is compatible with all charsets. The troubleshoot area contains options to change the encoding of the plugin database tables if needed.
+
+Translations are supported through PO/MO files located in the Contact Form to Email plugin folder "languages".
+
+The following translations are already included in the plugin:
+
+* English
+
 
 == Screenshots ==
 

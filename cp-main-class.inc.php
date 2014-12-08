@@ -161,6 +161,11 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
     }
 
 
+    public function plugins_loaded() {        
+        load_plugin_textdomain( 'cfte', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+    }
+    
+
     /* Filter for placing the maps into the contents */
     public function filter_content($atts) {
         global $wpdb;
@@ -198,14 +203,14 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
 
             wp_localize_script($this->prefix.'_builder_script', $this->prefix.'_fbuilder_config'.('_'.$this->print_counter), array('obj' =>
             '{"pub":true,"identifier":"'.('_'.$this->print_counter).'","messages": {
-            	                	"required": "'.str_replace(array('"'),array('\\"'),$this->get_option('vs_text_is_required', CP_CFEMAIL_DEFAULT_vs_text_is_required)).'",
-            	                	"email": "'.str_replace(array('"'),array('\\"'),$this->get_option('vs_text_is_email', CP_CFEMAIL_DEFAULT_vs_text_is_email)).'",
-            	                	"datemmddyyyy": "'.str_replace(array('"'),array('\\"'),$this->get_option('vs_text_datemmddyyyy', CP_CFEMAIL_DEFAULT_vs_text_datemmddyyyy)).'",
-            	                	"dateddmmyyyy": "'.str_replace(array('"'),array('\\"'),$this->get_option('vs_text_dateddmmyyyy', CP_CFEMAIL_DEFAULT_vs_text_dateddmmyyyy)).'",
-            	                	"number": "'.str_replace(array('"'),array('\\"'),$this->get_option('vs_text_number', CP_CFEMAIL_DEFAULT_vs_text_number)).'",
-            	                	"digits": "'.str_replace(array('"'),array('\\"'),$this->get_option('vs_text_digits', CP_CFEMAIL_DEFAULT_vs_text_digits)).'",
-            	                	"max": "'.str_replace(array('"'),array('\\"'),$this->get_option('vs_text_max', CP_CFEMAIL_DEFAULT_vs_text_max)).'",
-            	                	"min": "'.str_replace(array('"'),array('\\"'),$this->get_option('vs_text_min', CP_CFEMAIL_DEFAULT_vs_text_min)).'",
+            	                	"required": "'.str_replace(array('"'),array('\\"'),__($this->get_option('vs_text_is_required', CP_CFEMAIL_DEFAULT_vs_text_is_required),'cfte')).'",
+            	                	"email": "'.str_replace(array('"'),array('\\"'),__($this->get_option('vs_text_is_email', CP_CFEMAIL_DEFAULT_vs_text_is_email),'cfte')).'",
+            	                	"datemmddyyyy": "'.str_replace(array('"'),array('\\"'),__($this->get_option('vs_text_datemmddyyyy', CP_CFEMAIL_DEFAULT_vs_text_datemmddyyyy),'cfte')).'",
+            	                	"dateddmmyyyy": "'.str_replace(array('"'),array('\\"'),__($this->get_option('vs_text_dateddmmyyyy', CP_CFEMAIL_DEFAULT_vs_text_dateddmmyyyy),'cfte')).'",
+            	                	"number": "'.str_replace(array('"'),array('\\"'),__($this->get_option('vs_text_number', CP_CFEMAIL_DEFAULT_vs_text_number),'cfte')).'",
+            	                	"digits": "'.str_replace(array('"'),array('\\"'),__($this->get_option('vs_text_digits', CP_CFEMAIL_DEFAULT_vs_text_digits),'cfte')).'",
+            	                	"max": "'.str_replace(array('"'),array('\\"'),__($this->get_option('vs_text_max', CP_CFEMAIL_DEFAULT_vs_text_max),'cfte')).'",
+            	                	"min": "'.str_replace(array('"'),array('\\"'),__($this->get_option('vs_text_min', CP_CFEMAIL_DEFAULT_vs_text_min),'cfte')).'",
     	                    	    "previous": "'.str_replace(array('"'),array('\\"'),$previous_label).'",
     	                    	    "next": "'.str_replace(array('"'),array('\\"'),$next_label).'"
             	                }}'
@@ -269,11 +274,11 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
     /* Code for the admin area */
 
     public function plugin_page_links($links) {
-        $customAdjustments_link = '<a href="http://wordpress.dwbooster.com/contact-us">'.__('Request custom changes').'</a>';
+        $customAdjustments_link = '<a href="http://wordpress.dwbooster.com/contact-us">'.__('Request custom changes','cfte').'</a>';
     	array_unshift($links, $customAdjustments_link);
-        $settings_link = '<a href="options-general.php?page='.$this->menu_parameter.'">'.__('Settings').'</a>';
+        $settings_link = '<a href="options-general.php?page='.$this->menu_parameter.'">'.__('Settings','cfte').'</a>';
     	array_unshift($links, $settings_link);
-    	$help_link = '<a href="'.$this->plugin_URL.'">'.__('Help').'</a>';
+    	$help_link = '<a href="'.$this->plugin_URL.'">'.__('Help','cfte').'</a>';
     	array_unshift($links, $help_link);
     	return $links;
     }
@@ -287,7 +292,7 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
 
 
     function insert_button() {
-        print '<a href="javascript:send_to_editor(\'[CONTACT_FORM_TO_EMAIL]\');" title="'.__('Insert').' '.$this->plugin_name.'"><img hspace="5" src="'.plugins_url('/images/cp_form.gif', __FILE__).'" alt="'.__('Insert').' '.$this->plugin_name.'" /></a>';
+        print '<a href="javascript:send_to_editor(\'[CONTACT_FORM_TO_EMAIL]\');" title="'.__('Insert','cfte').' '.$this->plugin_name.'"><img hspace="5" src="'.plugins_url('/images/cp_form.gif', __FILE__).'" alt="'.__('Insert','cfte').' '.$this->plugin_name.'" /></a>';
     }
 
 
@@ -775,8 +780,17 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
     {
         $this->item = $id;
     }
+    
 
-
+    public function translate_json($str)
+    {
+        $form_data = json_decode($this->cleanJSON($str));        
+        for ($i=0; $i < count($form_data[0]); $i++)    
+            $form_data[0][$i]->title = __($form_data[0][$i]->title,'cfte');   
+        $str = json_encode($form_data);
+        return $str;
+    }
+    
 
     private function get_records_csv($formid, $form_name = "")
     {
