@@ -357,6 +357,7 @@ Translations are supported through PO/MO files located in the Contact Form to Em
 The following translations are already included in the plugin:
 
 * English
+* Spanish
 
 
 == Screenshots ==
