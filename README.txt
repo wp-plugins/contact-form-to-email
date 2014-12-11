@@ -359,6 +359,7 @@ The following translations are already included in the plugin:
 * English
 * Spanish
 * French
+* Italian
 
 
 == Screenshots ==
