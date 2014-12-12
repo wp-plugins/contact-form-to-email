@@ -361,6 +361,7 @@ The following translations are already included in the plugin:
 * French
 * Italian
 * German
+* Portuguese
 
 
 == Screenshots ==
