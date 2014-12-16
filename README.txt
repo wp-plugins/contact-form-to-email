@@ -367,6 +367,7 @@ The following translations are already included in the plugin:
 * Czech
 * Danish
 * Finnish
+* Dutch
 
 
 == Screenshots ==
