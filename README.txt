@@ -371,6 +371,7 @@ The following translations are already included in the plugin:
 * Polish
 * Swedish
 * Turkish
+* Catalan
 
 == Screenshots ==
 
