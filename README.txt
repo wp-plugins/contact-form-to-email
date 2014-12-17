@@ -373,6 +373,7 @@ The following translations are already included in the plugin:
 * Turkish
 * Catalan
 * Afrikaans
+* Arabic (ar)
 
 == Screenshots ==
 
