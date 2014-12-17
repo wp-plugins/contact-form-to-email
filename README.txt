@@ -370,6 +370,7 @@ The following translations are already included in the plugin:
 * Dutch
 * Polish
 * Swedish
+* Turkish
 
 == Screenshots ==
 
