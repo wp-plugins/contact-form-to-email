@@ -374,6 +374,7 @@ The following translations are already included in the plugin:
 * Catalan
 * Afrikaans
 * Arabic (ar)
+* Armenian
 
 == Screenshots ==
 
