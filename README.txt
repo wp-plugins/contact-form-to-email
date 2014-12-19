@@ -375,6 +375,7 @@ The following translations are already included in the plugin:
 * Afrikaans
 * Arabic (ar)
 * Armenian
+* Azerbaijani
 
 == Screenshots ==
 
