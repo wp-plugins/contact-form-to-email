@@ -377,6 +377,7 @@ The following translations are already included in the plugin:
 * Armenian (hy_AM)
 * Azerbaijani(az)
 * Basque (eu)
+* Belarusian (be_BY)
 
 == Screenshots ==
 
