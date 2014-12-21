@@ -378,6 +378,7 @@ The following translations are already included in the plugin:
 * Basque (eu)
 * Belarusian (be_BY)
 * Bosnian (bs_BA)
+* Bulgarian (bg_BG)
 * Catalan (ca)
 
 == Screenshots ==
