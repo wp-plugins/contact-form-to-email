@@ -371,13 +371,13 @@ The following translations are already included in the plugin:
 * Polish
 * Swedish
 * Turkish
-* Catalan
 * Afrikaans (af)
 * Arabic (ar)
 * Armenian (hy_AM)
 * Azerbaijani(az)
 * Basque (eu)
 * Belarusian (be_BY)
+* Catalan (ca)
 
 == Screenshots ==
 
