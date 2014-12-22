@@ -381,6 +381,7 @@ The following translations are already included in the plugin:
 * Bulgarian (bg_BG)
 * Catalan (ca)
 * Central Kurdish (ckb)
+* Chinese (China zh_CN)
 
 == Screenshots ==
 
