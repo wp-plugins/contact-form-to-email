@@ -387,6 +387,7 @@ The following translations are already included in the plugin:
 * Finnish (fi)
 * French (fr_FR)
 * Galician (gl_ES)
+* Georgian (ka_GE)
 
 == Screenshots ==
 
