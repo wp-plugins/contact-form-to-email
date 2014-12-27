@@ -358,13 +358,11 @@ The following translations are already included in the plugin:
 
 * English
 * Spanish
-* French
 * Italian
 * German
 * Portuguese
 * Portuguese(Brasil)
 * Russian
-* Finnish
 * Polish
 * Swedish
 * Turkish
@@ -386,6 +384,9 @@ The following translations are already included in the plugin:
 * Dutch (nl_NL)
 * Esperanto (eo_EO)
 * Estonian (et)
+* Finnish (fi)
+* French (fr_FR)
+* Galician (gl_ES)
 
 == Screenshots ==
 
