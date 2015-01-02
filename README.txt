@@ -393,6 +393,7 @@ The following translations are already included in the plugin:
 * Hindi (hi_IN)
 * Hungarian (hu_HU)
 * Indian Bengali (bn_IN)
+* Indonesian (id_ID)
 
 == Screenshots ==
 
