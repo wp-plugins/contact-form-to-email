@@ -397,6 +397,7 @@ The following translations are already included in the plugin:
 * Irish (ga_IE)
 * Japanese (ja)
 * Korean (ko_KR)
+* Latvian (lv)
 
 == Screenshots ==
 
