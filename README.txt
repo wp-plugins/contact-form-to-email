@@ -4,7 +4,7 @@ Donate link: http://wordpress.dwbooster.com/forms/contact-form-to-email
 Tags: contact form,contact,email,contact form database,form,contact form excel,feedback,captcha,contact form plugin,form to email,form to database,contact form builder,form to csv,wordpress contact form,csv,contact form reports,form to excel,contact form csv,drag and drop contact form,excel
 Requires at least: 3.0.5
 Tested up to: 4.1
-Stable tag: 1.0.1
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -421,9 +421,7 @@ The following translations are already included in the plugin:
 * First Contact Form to Email stable version released.
 * More configuration options added on the contact form settings area.
 
-== Upgrade Notice ==
-
-= 1.0.1 =
+= 1.01 =
 * Compatible with the latest WP versions
 * New automatic CSV report options
 * Added functional form builder
@@ -432,5 +430,15 @@ The following translations are already included in the plugin:
 * Fixed bug in pagination links
 * New feature for adding submission number into the emails
 * Fixed bug with back slashes on submissions
+
+== Upgrade Notice ==
+
+Very Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
+
+= 1.1.2 =
+* Improved translation code, compatible with the latest WP versions
+* New translations
+* Auto-detection and auto-solution for captcha image issues in servers with problem with the PHP sessions configuration
+ 
 
 Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
