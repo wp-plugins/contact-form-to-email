@@ -80,13 +80,72 @@ The Contact Form to Email plugin allows the setup of two types of automatic (per
 
 The reports are attached in a CSV / Excel file into the emails. In both cases the destination email addresses, email subject, email text and the report's interval can be specified. More info available in the section "Other Notes".
 
+
+= Language Support =
+
+The Contact Form to Email plugin is compatible with all charsets. The troubleshoot area contains options to change the encoding of the plugin database tables if needed.
+
+Translations are supported through PO/MO files located in the Contact Form to Email plugin folder "languages".
+
+The following translations are already included in the plugin:
+
+* English
+* Spanish
+* Italian
+* Portuguese
+* Portuguese(Brasil)
+* Russian
+* Polish
+* Swedish
+* Turkish
+* Afrikaans (af)
+* Arabic (ar)
+* Armenian (hy_AM)
+* Azerbaijani(az)
+* Basque (eu)
+* Belarusian (be_BY)
+* Bosnian (bs_BA)
+* Bulgarian (bg_BG)
+* Catalan (ca)
+* Central Kurdish (ckb)
+* Chinese (China zh_CN)
+* Chinese (Taiwan zh_TW)
+* Croatian (hr)
+* Czech (cs_CZ)
+* Danish (da_DK)
+* Dutch (nl_NL)
+* Esperanto (eo_EO)
+* Estonian (et)
+* Finnish (fi)
+* French (fr_FR)
+* Galician (gl_ES)
+* Georgian (ka_GE)
+* German (de_DE)
+* Greek (el)
+* Hebrew (he_IL)
+* Hindi (hi_IN)
+* Hungarian (hu_HU)
+* Indian Bengali (bn_IN)
+* Indonesian (id_ID)
+* Irish (ga_IE)
+* Japanese (ja)
+* Korean (ko_KR)
+* Latvian (lv)
+* Lithuanian (lt_LT)
+* Macedonian (mk_MK)
+* Malay (ms_MY)
+* Malayalam (ml_IN)
+* Maltese (mt_MT)
+* Norwegian (nb_NO)
+* Persian (fa_IR)
+
 = Updates =
 
-New features has been published in the current Contact Form to Email version 1.0.1 based on the feedback received and we would like to thank you all the people that have supported the development, provided feedback and feature requests. The plugin is currently over the 85,000 downloads/installations and a new set of updates is already being prepared, any feature requests will be welcome. Thank you!
+New features has been published in the current Contact Form to Email version 1.2.1 based on the feedback received and we would like to thank you all the people that have supported the development, provided feedback and feature requests. The plugin is currently over the 85,000 downloads/installations and a new set of updates is already being prepared, any feature requests will be welcome. Thank you!
 
 = New: Form Builder =
 
-In the latest update a basic form builder was included to visually add/modify/delete text fields, text-areas and emails with their respective validations.
+In the latest update a form builder was included to visually add/modify/delete text fields, text-areas and emails with their respective validations.
 
 
 == Installation ==
@@ -348,63 +407,6 @@ When you click a field already added into the contact form builder area, you can
  * **Instructions for user:** This text will appear in a smaller form below the field. It's useful for giving instructions to the user.
  * **Add CSS layout keywords:** Customize the look & feel. More info at the WordPress Contact Form to Email FAQ.
 
-= Language Support =
-
-The Contact Form to Email plugin is compatible with all charsets. The troubleshoot area contains options to change the encoding of the plugin database tables if needed.
-
-Translations are supported through PO/MO files located in the Contact Form to Email plugin folder "languages".
-
-The following translations are already included in the plugin:
-
-* English
-* Spanish
-* Italian
-* Portuguese
-* Portuguese(Brasil)
-* Russian
-* Polish
-* Swedish
-* Turkish
-* Afrikaans (af)
-* Arabic (ar)
-* Armenian (hy_AM)
-* Azerbaijani(az)
-* Basque (eu)
-* Belarusian (be_BY)
-* Bosnian (bs_BA)
-* Bulgarian (bg_BG)
-* Catalan (ca)
-* Central Kurdish (ckb)
-* Chinese (China zh_CN)
-* Chinese (Taiwan zh_TW)
-* Croatian (hr)
-* Czech (cs_CZ)
-* Danish (da_DK)
-* Dutch (nl_NL)
-* Esperanto (eo_EO)
-* Estonian (et)
-* Finnish (fi)
-* French (fr_FR)
-* Galician (gl_ES)
-* Georgian (ka_GE)
-* German (de_DE)
-* Greek (el)
-* Hebrew (he_IL)
-* Hindi (hi_IN)
-* Hungarian (hu_HU)
-* Indian Bengali (bn_IN)
-* Indonesian (id_ID)
-* Irish (ga_IE)
-* Japanese (ja)
-* Korean (ko_KR)
-* Latvian (lv)
-* Lithuanian (lt_LT)
-* Macedonian (mk_MK)
-* Malay (ms_MY)
-* Malayalam (ml_IN)
-* Maltese (mt_MT)
-* Norwegian (nb_NO)
-* Persian (fa_IR)
 
 == Screenshots ==
 
