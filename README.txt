@@ -138,6 +138,7 @@ The following translations are already included in the plugin:
 * Maltese (mt_MT)
 * Norwegian (nb_NO)
 * Persian (fa_IR)
+* Punjabi (pa_IN)
 
 = Updates =
 
