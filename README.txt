@@ -139,6 +139,7 @@ The following translations are already included in the plugin:
 * Norwegian (nb_NO)
 * Persian (fa_IR)
 * Punjabi (pa_IN)
+* Romanian (ro_RO)
 
 = Updates =
 
