@@ -140,6 +140,7 @@ The following translations are already included in the plugin:
 * Persian (fa_IR)
 * Punjabi (pa_IN)
 * Romanian (ro_RO)
+* Serbian (sr_RS)
 
 = Updates =
 
