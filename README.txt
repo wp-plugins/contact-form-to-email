@@ -141,6 +141,7 @@ The following translations are already included in the plugin:
 * Punjabi (pa_IN)
 * Romanian (ro_RO)
 * Serbian (sr_RS)
+* Slovak (sk_SK)
 
 = Updates =
 
