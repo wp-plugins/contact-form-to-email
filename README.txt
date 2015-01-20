@@ -142,6 +142,7 @@ The following translations are already included in the plugin:
 * Romanian (ro_RO)
 * Serbian (sr_RS)
 * Slovak (sk_SK)
+* Slovene (sl_SI)
 
 = Updates =
 
