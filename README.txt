@@ -90,13 +90,11 @@ Translations are supported through PO/MO files located in the Contact Form to Em
 The following translations are already included in the plugin:
 
 * English
-* Spanish
 * Italian
 * Portuguese
 * Portuguese(Brasil)
 * Russian
 * Polish
-* Swedish
 * Turkish
 * Afrikaans (af)
 * Arabic (ar)
@@ -143,6 +141,9 @@ The following translations are already included in the plugin:
 * Serbian (sr_RS)
 * Slovak (sk_SK)
 * Slovene (sl_SI)
+* Spanish (es_ES)
+* Swedish (sv_SE)
+* Tagalog (tl)
 
 = Updates =
 
