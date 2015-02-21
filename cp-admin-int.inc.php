@@ -160,7 +160,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
            qs += "&font="+f.cv_font.options[f.cv_font.selectedIndex].value;
            qs += "&r="+(randcaptcha++);
            
-           document.getElementById("captchaimg").src= "<?php echo $this->get_site_url().'/?'.$this->prefix.'_captcha=captcha&inAdmin=1'; ?>"+qs;
+           document.getElementById("captchaimg").src= "<?php echo $this->get_site_url(true).'/?'.$this->prefix.'_captcha=captcha&inAdmin=1'; ?>"+qs;
         }
 
      </script>
@@ -367,7 +367,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
          <td colspan="2" rowspan="">
            Preview:<br />
              <br />
-            <img src="<?php echo $this->get_site_url().'/?'.$this->prefix.'_captcha=captcha&inAdmin=1'; ?>"  id="captchaimg" alt="security code" border="0"  />            
+            <img src="<?php echo $this->get_site_url(true).'/?'.$this->prefix.'_captcha=captcha&inAdmin=1'; ?>"  id="captchaimg" alt="security code" border="0"  />            
          </td> 
         </tr>             
                 
