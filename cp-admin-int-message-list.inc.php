@@ -59,7 +59,7 @@ else if (isset($_GET['import']) && $_GET['import'] == '1')
 }
 
 if ($this->item != 0)
-    $myform = $wpdb->get_results( 'SELECT * FROM '.$wpdb->prefix.$this->table_items .' WHERE id='.$this->item);
+    $myform = $wpdb->get_results( 'SELECT * FROM '.$wpdb->prefix.$this->table_items .' WHERE id='.intval($this->item));
 
 
 $current_page = intval($_GET["p"]);
