@@ -70,7 +70,7 @@ $cond = '';
 if ($_GET["search"] != '') $cond .= " AND (data like '%".esc_sql($_GET["search"])."%' OR posted_data LIKE '%".esc_sql($_GET["search"])."%')";
 if ($_GET["dfrom"] != '') $cond .= " AND (`time` >= '".esc_sql($_GET["dfrom"])."')";
 if ($_GET["dto"] != '') $cond .= " AND (`time` <= '".esc_sql($_GET["dto"])." 23:59:59')";
-if ($this->item != 0) $cond .= " AND formid=".$this->item;
+if ($this->item != 0) $cond .= " AND formid=".intval($this->item);
 
 $events = $wpdb->get_results( "SELECT * FROM ".$wpdb->prefix.$this->table_messages." WHERE 1=1 ".$cond." ORDER BY `time` DESC" );
 $total_pages = ceil(count($events) / $records_per_page);
