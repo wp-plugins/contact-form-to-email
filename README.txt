@@ -451,16 +451,21 @@ When you click a field already added into the contact form builder area, you can
 * Fixed warning that appeared with PHP safe mode restrictions 
 * Sanitized GET parameters used in queries
 
+
+= 1.1.3 =
+* Sanitized parameters used in SQL queries.
+* Support for large forms.
+* Improved translations.
+
+Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
+
 == Upgrade Notice ==
 
 Very Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
 
-= 1.1.2 =
-* Compatible with the latest WP versions
-* Improved translation code, compatible with the latest WP versions
-* New translations
-* Auto-detection and auto-solution for captcha image issues in servers with problem with the PHP sessions configuration
-* Fixed warning that appeared with PHP safe mode restrictions 
-* Sanitized GET parameters used in queries
+= 1.1.3 =
+* Sanitized parameters used in SQL queries.
+* Support for large forms.
+* Improved translations.
 
 Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
