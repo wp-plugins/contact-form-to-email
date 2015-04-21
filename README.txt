@@ -3,7 +3,7 @@ Contributors: codepeople
 Donate link: http://wordpress.dwbooster.com/forms/contact-form-to-email
 Tags: contact form,contact,email,contact form database,form,contact form excel,feedback,captcha,contact form plugin,form to email,form to database,contact form builder,form to csv,wordpress contact form,csv,contact form reports,form to excel,contact form csv,drag and drop contact form,excel
 Requires at least: 3.0.5
-Tested up to: 4.1
+Tested up to: 4.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
