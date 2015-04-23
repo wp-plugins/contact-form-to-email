@@ -456,6 +456,7 @@ When you click a field already added into the contact form builder area, you can
 * Sanitized parameters used in SQL queries.
 * Support for large forms.
 * Improved translations.
+* Compatible with the latest WordPress 4.2.x version
 
 Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
 
