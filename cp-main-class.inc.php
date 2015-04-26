@@ -533,24 +533,7 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
             $from_1 = $replyto;
         else
             $from_1 = $from;
-/**
-        // using multiple choice fields to send emails to selected recipients
-        $arr["A"] = $_POST["fieldname1"];
-        $arr["B"] = $_POST["fieldname9"];
-        foreach ($arr as $arrayitems)
-            if (is_array($arrayitems))
-            {
-                foreach ($arrayitems as $value)
-                {
-                    $string = substr($value,0,strpos($value,"-"));
-                    $string = explode(",",trim($string));
-                    foreach ($string as $emailkk)
-                        if (strpos($emailkk,"@"))
-                            $to[] = trim($emailkk);
-                }
-            }
-        $to = array_unique($to);
-*/
+
         foreach ($to as $item)
             if (trim($item) != '')
             {
