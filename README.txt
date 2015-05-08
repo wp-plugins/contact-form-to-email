@@ -459,7 +459,7 @@ When you click a field already added into the contact form builder area, you can
 * Compatible with the latest WordPress 4.2.x version
 
 = 1.1.4 =
-* Compatible with the WordPress 4.2.1 version
+* Compatible with the WordPress 4.2.2 version
 
 Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
 
@@ -469,6 +469,6 @@ Very Important note: If you are using the Professional version don't update via 
 
 
 = 1.1.4 =
-* Compatible with the WordPress 4.2.1 version
+* Compatible with the WordPress 4.2.2 version
 
 Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
