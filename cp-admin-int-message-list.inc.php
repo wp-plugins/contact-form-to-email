@@ -41,7 +41,7 @@ else if (isset($_GET['import']) && $_GET['import'] == '1')
             for ($c=3; $c < $num; $c++)
                 if (isset($form[$c-3]))
                 {
-                    $rowdata[$form[$c-3]->name] = $data[$c]; //echo $data[$c] . "<br />\n";
+                    $rowdata[$form[$c-3]->name] = $data[$c]; 
                     $formatted_data .= $form[$c-3]->title. ": ". $data[$c] . "\n\n";
                 }                    
             $wpdb->insert($wpdb->prefix.$this->table_messages, array( 
