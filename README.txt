@@ -466,17 +466,22 @@ When you click a field already added into the contact form builder area, you can
 * Fixed XSS vulnerability
 * Fixed bug in translation functions.
 
-Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
+= 1.1.6 =
+* Compatible with the latest WordPress 4.2.3
+* Update to messages list.
+* Better code for captcha image generation.
+* Fixed conflict with zLib library
+* Update to the captcha generation to add content-length header
+
 
 == Upgrade Notice ==
 
-Very Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
-
-
-= 1.1.5 =
-* Removed use of esc_sql for numeric values
-* Fixed XSS vulnerability
-* Fixed bug in translation functions.
+= 1.1.6 =
+* Compatible with the latest WordPress 4.2.3
+* Update to messages list.
+* Better code for captcha image generation.
+* Fixed conflict with zLib library
+* Update to the captcha generation to add content-length header
 
 
 Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
