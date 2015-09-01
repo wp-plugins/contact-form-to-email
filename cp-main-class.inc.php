@@ -890,9 +890,9 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
                     update_option('cp_cfte_last_sent'.$formid, date("Y-m-d ".(get_option('cp_cfte_rep_hour', '')<'10'?'0':'').get_option('cp_cfte_rep_hour', '').":00:00"));
                     $text = '';
                     $forms = $wpdb->get_results("SELECT id,fp_from_email,form_name,rep_days,rep_hour,rep_emails,rep_subject,rep_emailformat,rep_message,rep_enable FROM ".$wpdb->prefix.$this->table_items." WHERE rep_emails<>'' AND rep_enable='yes'");
+                    $attachments = array();
                     foreach ($forms as $form)  // for each form with the reports enabled
-                    {
-                        $attachments = array();
+                    {                        
                         $csv = $this->get_records_csv($form->id, $form->form_name);
                         if ($csv != '')
                         {
