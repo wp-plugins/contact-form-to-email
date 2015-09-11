@@ -235,7 +235,10 @@ class CP_ContactFormToEmail extends CP_CFTEMAIL_BaseClass {
                 setTimeout( "<?php echo $this->prefix; ?>_cerror<?php echo '_'.$this->print_counter; ?>()", 100);
                 return false;
             } else <?php } ?>
+            {
+                document.getElementById("form_structure<?php echo '_'.$this->print_counter; ?>").value = '';    
                 return true;
+            }    
          }
          function <?php echo $this->prefix; ?>_cerror<?php echo '_'.$this->print_counter; ?>(){$dexQuery = jQuery.noConflict();$dexQuery("#hdcaptcha_error<?php echo '_'.$this->print_counter; ?>").css('top',$dexQuery("#hdcaptcha_<?php echo $this->prefix; ?>_post<?php echo '_'.$this->print_counter; ?>").outerHeight());$dexQuery("#hdcaptcha_error<?php echo '_'.$this->print_counter; ?>").css("display","inline");}
         </script>
