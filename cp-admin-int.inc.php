@@ -464,7 +464,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
 <div id="metabox_basic_settings" class="postbox" >
   <h3 class='hndle' style="padding:5px;"><span>Note</span></h3>
   <div class="inside">
-   To insert this form in a post/page, use the dedicated icon <?php echo '<img hspace="5" src="'.plugins_url('/images/cp_form.gif', __FILE__).'" alt="'.__('Insert '.$this->plugin_name,'cfte').'" /></a>';     ?>
+   To insert this form in a post/page, use the dedicated icon <?php echo '<img hspace="5" src="'.plugins_url('/images/cp_form.gif', __FILE__).'" alt="'.__('Insert '.$this->plugin_name,'contact-form-to-email').'" /></a>';     ?>
    which has been added to your Upload/Insert Menu, just below the title of your Post/Page edition.
    <br /><br />
   </div>
