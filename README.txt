@@ -482,12 +482,8 @@ When you click a field already added into the contact form builder area, you can
 
 == Upgrade Notice ==
 
-= 1.1.7 =
-* Update to the h2-h1 tags in the admin interface
-* Fixed bug with the tabs
-* Fixed initialization bug in reports
-* Fixed typo in dutch language
-* Removed unneeded data from the post process
-* Translation domain updated
+= 1.1.8 =
+* Fixed CSV sample format
+* Updated support links
 
 Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
