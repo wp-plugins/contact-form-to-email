@@ -420,7 +420,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
         </tr>
         <tr valign="top">
         <th scope="row">Send report every</th>
-        <td><input type="text" name="rep_days" size="4" value="<?php echo esc_attr($this->get_option('rep_days', '1')); ?>" /> days</td>
+        <td><input type="text" name="rep_days" size="4" value="<?php echo esc_attr($this->get_option('rep_days', '7')); ?>" /> days</td>
         </tr>        
         <tr valign="top">
         <th scope="row">Send report after this hour (server time)</th>
