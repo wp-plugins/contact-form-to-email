@@ -480,10 +480,13 @@ When you click a field already added into the contact form builder area, you can
 * Fixed typo in dutch language
 * Removed unneeded data from the post process
 
-== Upgrade Notice ==
-
 = 1.1.8 =
 * Fixed CSV sample format
 * Updated support links
+
+== Upgrade Notice ==
+
+= 1.1.9 =
+* Default settings updated
 
 Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support

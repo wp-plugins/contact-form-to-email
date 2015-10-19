@@ -244,7 +244,7 @@ if ($message) echo "<div id='setting-error-settings_updated' class='updated sett
            <option value="yes"<?php if ($option == 'yes') echo ' selected'; ?>>Yes</option>
           </select>     
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-          Send report every: <input type="text" name="cp_cfte_rep_days" size="1" value="<?php echo esc_attr(get_option('cp_cfte_rep_days', '1')); ?>" /> days
+          Send report every: <input type="text" name="cp_cfte_rep_days" size="1" value="<?php echo esc_attr(get_option('cp_cfte_rep_days', '7')); ?>" /> days
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
           Send after this hour (server time):
           <select name="cp_cfte_rep_hour">
