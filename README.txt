@@ -44,6 +44,10 @@ In addition to that basic feature it also **saves the contact form data into a d
 * **Customizable email messages:** Specify the text of the contact form email notifications. Supports both plain text emails and HTML formatted emails.
 * **Multi language support:** The contact form builder allows to enter the field labels and validations in any language. It supports special characters.
 
+ = More features = 
+ 
+ There are also commercial versions of the Contact Form to Email with other features not listed here that can be get at http://wordpress.dwbooster.com/forms/contact-form-to-email#download
+
 = Messages List =
 
 The messages list helps to check the past contact form submissions and print or export them. Includes a search/filter form with the following options:
