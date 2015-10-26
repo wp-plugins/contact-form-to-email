@@ -310,6 +310,8 @@ if ($message) echo "<div id='setting-error-settings_updated' class='updated sett
         <option value="">Keep current charset (Recommended)</option>
         <option value="utf8_general_ci">UTF-8 (try this first)</option>
         <option value="latin1_swedish_ci">latin1_swedish_ci</option>
+        <option value="hebrew_general_ci">hebrew_general_ci</option>
+        <option value="gb2312_chinese_ci">gb2312_chinese_ci</option>        
        </select><br />
        <em>* Update the charset if you are getting problems displaying special/non-latin characters. After updated you need to edit the special characters again.</em>
        <br />

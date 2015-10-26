@@ -488,9 +488,15 @@ When you click a field already added into the contact form builder area, you can
 * Fixed CSV sample format
 * Updated support links
 
-== Upgrade Notice ==
-
 = 1.1.9 =
 * Default settings updated
+
+= 1.1.10 =
+* Support new charsets
+
+== Upgrade Notice ==
+
+= 1.1.10 =
+* Support new charsets
 
 Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
