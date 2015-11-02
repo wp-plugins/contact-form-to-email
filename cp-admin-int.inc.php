@@ -91,6 +91,14 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
         <td><textarea type="text" name="fp_message" rows="6" cols="80"><?php echo $this->get_option('fp_message', CP_CFEMAIL_DEFAULT_fp_message); ?></textarea></td>
         </tr>                                                               
      </table>  
+     
+     <div style="border:1px dotted black;padding:5px 15px 5px 15px;font-size:75%;background-color:#ffffcc">
+        <p><strong><u>Important note:</u></strong> The plugin uses the settings specified into the WordPress website to deliver the emails. 
+        It is <strong>strongly recommended to use a "from" email addresses that belongs to the website domain name</strong>, for example if your website is
+        <em>http://www.sample-website.com</em> then use an email address like <em>info@sample-website.com</em>, this will help to skip a lot of anti-spam restrictions.
+        Avoid using emails like "<em>...@gmail.com</em>", "<em>...@hotmail.com</em>", "<em>...@aol.com</em>" as "from" addresses since these are identified as originated
+        at external servers and reach to the spam folder or are completely blocked. This isn't a mandaroty requirement but it is strongly recommended.</p>       
+     </div>
   </div>    
  </div>   
  
