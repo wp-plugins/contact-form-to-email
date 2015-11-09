@@ -198,7 +198,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
          
      </div>        
    
-  <div style="border:1px dotted black;background-color:#ffffaa;padding-left:15px;padding-right:15px;padding-top:5px;width:550px;font-size:12px;color:#000000;"> 
+  <div style="border:1px dotted black;background-color:#ffffaa;padding-left:15px;padding-right:15px;padding-top:5px;width:740px;font-size:12px;color:#000000;"> 
    <p>The form builder supports 3 fields in this version: "Single Line Text", "Email" and "Text-area".</p>
    <p>The full set of fields is available in the <a href="http://wordpress.dwbooster.com/forms/contact-form-to-email#download">pro version</a>. The <a href="http://wordpress.dwbooster.com/forms/contact-form-to-email#download">pro version</a> also supports:
    <ul>
