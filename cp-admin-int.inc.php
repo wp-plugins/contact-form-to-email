@@ -248,7 +248,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && isset( $_POST[$this->prefix.'_post_
   <h3 class='hndle' style="padding:5px;"><span>Validation Settings</span></h3>
   <div class="inside">
      <table class="form-table">    
-        <tr valign="top">
+        <tr valign="top" style="display:none">
         <th scope="row">Use Validation?</th>
         <td>
           <?php $option = $this->get_option('vs_use_validation', CP_CFEMAIL_DEFAULT_vs_use_validation); ?>

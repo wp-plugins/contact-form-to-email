@@ -500,9 +500,12 @@ When you click a field already added into the contact form builder area, you can
 = 1.1.12 =
 * Updates to admin interface
 
+= 1.1.13 =
+* Form validation is now activated from the form builder
+
 == Upgrade Notice ==
 
-= 1.1.12 =
-* Updates to admin interface
+= 1.1.13 =
+* Form validation is now activated from the form builder
 
 Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
